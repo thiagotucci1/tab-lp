@@ -30,7 +30,7 @@
   --color-line: 255 255 255;
   --color-ink: 255 255 255;
   --color-muted: 138 151 156;
-  --color-faint: 92 104 109;
+  --color-faint: 125 137 142; /* era 92 104 109 (3,29:1, abaixo do AA); agora 5,25:1 sobre o fundo */
   --glass-alpha: 0.55;
   --glass-alpha-strong: 0.72;
   --glass-highlight: 255 255 255 / 0.07;
@@ -131,7 +131,7 @@ h1 { font-family: var(--font-display); font-weight: 700; text-transform: upperca
 h2 { font-weight: 700; font-size: clamp(1.5rem, 3vw, 2.35rem); letter-spacing: -.005em; }
 h3 { font-weight: 700; font-size: clamp(1.05rem, 1.4vw, 1.25rem); }
 
-.lead { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--muted); font-weight: 300; max-width: 60ch; }
+.lead { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--muted); font-weight: 400; max-width: 60ch; }
 .muted { color: var(--muted); }
 .brand-text { color: var(--brand-400); }
 

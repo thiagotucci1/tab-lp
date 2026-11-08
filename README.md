@@ -52,6 +52,24 @@ Envia para o Formspree (`https://formspree.io/f/mzeeqyde`) sem sair da página. 
 dona do formulário**: é preciso confirmar para os pedidos começarem a chegar. O plano grátis aceita
 50 envios por mês.
 
+## Medição
+
+Vercel Web Analytics (sem cookies) em `index.html` e `obrigado.html`. Depois de um envio bem-sucedido, o
+formulário leva para `/obrigado` (`cleanUrls` no `vercel.json`). **Taxa de conversão = visitas em
+`/obrigado` ÷ visitas em `/`**. O evento `lead_enviado` também é disparado, mas a Vercel só registra
+eventos personalizados em planos pagos. Para funcionar: ativar Analytics no painel do projeto `tab-lp`.
+
+## Auditoria visual (nov/2026)
+
+Contraste do CTA (3,82:1 → 5,28:1), cinza `--faint` (3,29:1 → 5,25:1, usado em rótulos do formulário),
+peso do texto de apoio 300 → 400, vermelho saturado reservado ao CTA e à marca (marcadores decorativos
+com menos intensidade). Ainda não feito: fontes em WOFF2 (precisa do fontTools) e enxugar a seção de
+produto (5 blocos iguais seguidos; decisão de estrutura pendente).
+
+Prova social: o produto ainda não foi a mercado (MVP em fase final), então não há depoimentos de
+clientes. A página se apoia no produto mostrado, no uso pela comissão da NewMode, na conformidade com a
+Riot e no programa de founder customers. Não inventar números, logos ou depoimentos.
+
 ## Pendências
 
 - [ ] **Depoimentos** (`#depoimentos`, escondido com `hidden`): texto, nome e função do coach da NewMode
