@@ -5,22 +5,11 @@
    Referência: TASK MANAGEMENT/design/UI_SYSTEM_PROMPT.md
    ========================================================================== */
 
-/* Fontes da marca, hospedadas em /fonts (Agharti para h1, Chakra Petch para o resto).
-   Regra de uso (3/out): Agharti é sempre Black UltraWide e sempre em caixa alta — nunca usar
-   Agharti para um texto que não vai ficar uppercase (ver .lp-calc-big, que por isso usa
-   Chakra Petch em vez do display). Para trocar a variante, mude só a linha "src" abaixo. */
-@font-face {
-  font-family: "Agharti";
-  src: url("../../fonts/Agharti-BlackUltraWide.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face { font-family: "Chakra Petch"; font-weight: 300; font-style: normal; font-display: swap; src: url("../../fonts/ChakraPetch-Light.ttf") format("truetype"); }
-@font-face { font-family: "Chakra Petch"; font-weight: 400; font-style: normal; font-display: swap; src: url("../../fonts/ChakraPetch-Regular.ttf") format("truetype"); }
-@font-face { font-family: "Chakra Petch"; font-weight: 500; font-style: normal; font-display: swap; src: url("../../fonts/ChakraPetch-Medium.ttf") format("truetype"); }
-@font-face { font-family: "Chakra Petch"; font-weight: 600; font-style: normal; font-display: swap; src: url("../../fonts/ChakraPetch-SemiBold.ttf") format("truetype"); }
-@font-face { font-family: "Chakra Petch"; font-weight: 700; font-style: normal; font-display: swap; src: url("../../fonts/ChakraPetch-Bold.ttf") format("truetype"); }
+/* Fontes da LP do TAB (nov/2026), as mesmas do app: Spline Sans nos títulos (Bold — a fonte vai
+   de 300 a 700, não existe Black) e Geist no texto (Regular). Variáveis, hospedadas em /fonts, OFL. */
+@font-face { font-family: "Spline Sans"; font-weight: 300 700; font-style: normal; font-display: swap; src: url("../../fonts/SplineSans-VariableFont_wght.ttf") format("truetype"); }
+@font-face { font-family: "Geist"; font-weight: 100 900; font-style: normal; font-display: swap; src: url("../../fonts/Geist-VariableFont_wght.ttf") format("truetype"); }
+@font-face { font-family: "Geist"; font-weight: 100 900; font-style: italic; font-display: swap; src: url("../../fonts/Geist-Italic-VariableFont_wght.ttf") format("truetype"); }
 
 /* ---------- Tokens (formato "R G B", para aplicar opacidade com rgb(var(--x) / a)) ---------- */
 :root, [data-theme="dark"] {
@@ -77,8 +66,8 @@
   --muted: rgb(var(--color-muted));
   --faint: rgb(var(--color-faint));
 
-  --font-display: "Agharti", "Chakra Petch", ui-sans-serif, sans-serif;
-  --font-body: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Spline Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
 
   --radius: 12px;
   --gutter: clamp(16px, 4vw, 48px);
@@ -125,9 +114,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
 
 /* ---------- Tipografia ---------- */
-/* Só o h1 usa a fonte de marca, em caixa alta. h2/h3 são Chakra Petch. */
-h1, h2, h3 { margin: 0; line-height: 1.15; }
-h1 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: .01em; line-height: 1.04; font-size: clamp(2.1rem, 5.4vw, 4rem); }
+/* Títulos em Spline Sans Bold; h1 em caixa alta (como os títulos de página do app). Texto em Geist. */
+h1, h2, h3, h4 { margin: 0; line-height: 1.15; font-family: var(--font-display); font-weight: 700; }
+h1 { text-transform: uppercase; letter-spacing: -.01em; line-height: 1.02; font-size: clamp(2.1rem, 5.4vw, 4rem); }
 h2 { font-weight: 700; font-size: clamp(1.5rem, 3vw, 2.35rem); letter-spacing: -.005em; }
 h3 { font-weight: 700; font-size: clamp(1.05rem, 1.4vw, 1.25rem); }
 
@@ -792,7 +781,7 @@ html.lenis, html.lenis body { height: auto; }
 .lp-footer-legal { max-width: 70ch; font-size: 11.5px; line-height: 1.6; color: var(--faint); }
 .lp-footer-links { margin: 0; }
 
-/* Regra de marca (3/out): fora de títulos em Agharti, a palavra TAB é sempre Chakra Petch Bold Uppercase */
+/* Regra de marca: a palavra TAB é sempre Bold e caixa alta (herda a fonte do contexto: Geist no texto, Spline nos títulos) */
 .tab-mark { font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
 
 /* cabeçalho: logo do TAB + logo da NewMode, separados por uma linha — ver tab.dc.html */

@@ -29,6 +29,9 @@
 .lp-trust .icon { color: var(--muted); }
 .feature-list .blk, .lp-offer .blk { opacity: .45; }
 
+/* Spline Sans é mais larga que a Agharti: H1 do hero menor para caber em 2 linhas no desktop */
+.lp-hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.7rem); }
+
 /* Header: ícone do TAB em branco (o PNG é vermelho; o filtro mantém a forma e troca a cor) */
 .lp-brand img.lp-tab-icon { filter: brightness(0) invert(1); }
 

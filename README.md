@@ -20,7 +20,7 @@ Reescrita a partir do protótipo comercial `tab-commercial.html` (NEWMODE/Docume
 - CTA único: agendar demo. Comprador: o coach influencia, o dono/gestor paga. A página fala primeiro com
   o coach (produto) e depois com o dono (gestão + calculadora).
 - Tráfego: prospecção direta e redes da NewMode (visitante morno), por isso a página é mais curta.
-- Visual híbrido: marca da NewMode nos títulos/CTA (`site.css`) e telas do produto recriadas em HTML no
+- Visual híbrido: vidro e acento da NewMode (`site.css`) e telas do produto recriadas em HTML no
   estilo do app (`tab.css`), **sempre com dados fictícios** (nicks do protótipo) e etiqueta "Dados fictícios".
 - Planos: Free (Overview, gestão do roster, agenda, dados básicos da equipe) e Pro (o resto do protótipo).
   Sem preço na página. Founder customers têm condições especiais (citado sem detalhar). Não citar
@@ -43,7 +43,9 @@ formulário → rodapé.
 - `assets/css/tab.css` — componentes desta página: telas do app (`.app-*`), gestão, planos, depoimentos.
 - `assets/js/site.js` + `vendor/lenis.min.js` — scroll suave, animação de entrada, botões.
 - `assets/img/tab/` — ícone, lockup e imagem de compartilhamento (og).
-- `fonts/` — Agharti Black UltraWide (h1, sempre em caixa alta) e Chakra Petch.
+- `fonts/` — as fontes do app: Spline Sans (títulos, Bold 700 — a fonte vai de 300 a 700, não tem Black)
+  e Geist (texto, Regular 400; itálico só no bloco de depoimentos). Variáveis, licença OFL. Trocadas em
+  nov/2026 no lugar de Agharti + Chakra Petch. A palavra TAB segue Bold e caixa alta, na fonte do contexto.
 
 ## Formulário
 
