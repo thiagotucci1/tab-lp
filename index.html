@@ -143,7 +143,7 @@
         <div class="copy reveal">
           <span class="feature-n">01 · Performance</span>
           <h3>Saiba quem precisa de atenção antes do treino começar.</h3>
-          <p>O <span class="tab-mark">TAB</span> compara as últimas partidas de cada jogador com a média do ato e aponta quem está caindo, quem está em alta e quem é o mais consistente.</p>
+          <p>Quem caiu, quem subiu e quem segura o nível, comparando as últimas partidas com a média do ato.</p>
           <ul class="feature-list">
             <li><span class="blk"></span>Alertas de queda de elo e de desempenho</li>
             <li><span class="blk"></span>MVP da semana, maior subida, maior queda</li>
@@ -179,7 +179,7 @@
         <div class="copy reveal">
           <span class="feature-n">02 · Evolução e comparativos</span>
           <h3>Veja a trajetória, não só a foto de hoje.</h3>
-          <p>A evolução semana a semana de cada jogador contra a média do elenco, e um duelo 1v1 interno quando você precisa decidir entre dois nomes para a mesma função.</p>
+          <p>Para decidir entre dois nomes da mesma função com número, não com impressão.</p>
           <ul class="feature-list">
             <li><span class="blk"></span>Evolução semanal de KDR, ACS, ADR e HS%</li>
             <li><span class="blk"></span>Head-to-Head entre dois jogadores do elenco</li>
@@ -219,7 +219,7 @@
         <div class="copy reveal">
           <span class="feature-n">03 · Mapas e Pick/Ban</span>
           <h3>Chegue ao veto sabendo onde o time ganha.</h3>
-          <p>O winrate do time por mapa, com scrims e oficiais, e o de cada jogador na ranked. O <span class="tab-mark">TAB</span> sugere o que pickar e o que banir a partir das partidas da própria equipe.</p>
+          <p>Winrate por mapa do time e de cada jogador, calculado com as partidas da própria equipe.</p>
           <ul class="feature-list">
             <li><span class="blk"></span>Heatmap de winrate por mapa: time e jogadores</li>
             <li><span class="blk"></span>Recomendação de pick e ban com a regra à vista</li>
@@ -250,7 +250,7 @@
         <div class="copy reveal">
           <span class="feature-n">04 · AI Insights</span>
           <h3>A IA sugere. A comissão decide.</h3>
-          <p>O <span class="tab-mark">TAB</span> lê as partidas e os logs da equipe e propõe pontos de atenção. Nada vira conclusão sozinho: cada insight passa pela revisão da comissão, que aprova, descarta e anota o contexto.</p>
+          <p>O <span class="tab-mark">TAB</span> lê partidas e logs e propõe pontos de atenção. Nada vira conclusão sem passar pela comissão.</p>
           <ul class="feature-list">
             <li><span class="blk"></span>Insights com a fonte de onde vieram</li>
             <li><span class="blk"></span>Aprovar, descartar ou deixar pendente</li>
@@ -279,7 +279,7 @@
         <div class="copy reveal">
           <span class="feature-n">05 · Relatórios</span>
           <h3>Leve o resumo pronto para a reunião.</h3>
-          <p>Relatório do período da equipe, com aproveitamento, MVP e os insights que a comissão aprovou. Ou o relatório individual de um jogador, com desempenho, histórico ranqueado e advertências. Os dois saem em PDF.</p>
+          <p>Aproveitamento, MVP, histórico e os insights aprovados, sem montar planilha nem slide.</p>
           <ul class="feature-list">
             <li><span class="blk"></span>Relatório do time e relatório individual</li>
             <li><span class="blk"></span>Só entram os insights aprovados pela comissão</li>
@@ -567,7 +567,7 @@
 
     <div class="founders reveal">
       <span class="icon" aria-hidden="true">stars</span>
-      <p><b>Founder customers:</b> as primeiras organizações a usar o <span class="tab-mark">TAB</span> têm condições especiais. A gente conta na demo.</p>
+      <p><b>Founder customers (clientes fundadores):</b> as primeiras organizações a usar o <span class="tab-mark">TAB</span> têm condições especiais. A gente conta na demo.</p>
     </div>
 
     <p class="reveal" style="text-align:center">
@@ -586,7 +586,7 @@
     <div class="lp-faq reveal">
       <details class="card lp-faq-item">
         <summary>Quanto custa?<span class="icon" aria-hidden="true">expand_more</span></summary>
-        <p>O <span class="tab-mark">TAB</span> tem um plano Free e um plano Pro. Os valores do Pro a gente apresenta na demo, porque dependem do tamanho da organização e de quantas equipes vão usar. As primeiras organizações têm condições especiais de founder customer.</p>
+        <p>O <span class="tab-mark">TAB</span> tem um plano Free e um plano Pro. Os valores do Pro a gente apresenta na demo, porque dependem do tamanho da organização e de quantas equipes vão usar. As primeiras organizações têm condições especiais de cliente fundador.</p>
       </details>
       <details class="card lp-faq-item">
         <summary>O que o plano Free inclui?<span class="icon" aria-hidden="true">expand_more</span></summary>
@@ -756,9 +756,54 @@
       status.classList.toggle("form-status--error", !!isError);
     }
 
+    // Validação própria (Nielsen 9): mensagem em português, específica e embaixo do campo, no lugar
+    // do balão nativo do navegador. Sem JS, o form continua com a validação nativa (novalidate só via JS).
+    form.noValidate = true;
+    var rules = {
+      nome: function (v) { return v ? "" : "Informe seu nome."; },
+      email: function (v) {
+        if (!v) { return "Informe seu e-mail."; }
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? "" : "Confira o e-mail: precisa ter @ e domínio (ex.: nome@org.com).";
+      },
+      organizacao: function (v) { return v ? "" : "Informe a organização ou o time."; },
+      funcao: function (v) { return v ? "" : "Escolha sua função."; }
+    };
+    function check(input) {
+      var msg = rules[input.name](input.value.trim());
+      var id = "err-" + input.id;
+      var el = document.getElementById(id);
+      if (msg) {
+        if (!el) {
+          el = document.createElement("p");
+          el.className = "field-error";
+          el.id = id;
+          input.closest(".field").appendChild(el);
+        }
+        el.textContent = msg;
+        input.setAttribute("aria-invalid", "true");
+        input.setAttribute("aria-describedby", id);
+      } else if (el) {
+        el.remove();
+        input.removeAttribute("aria-invalid");
+        input.removeAttribute("aria-describedby");
+      }
+      return !msg;
+    }
+    Object.keys(rules).forEach(function (name) {
+      var input = form.elements[name];
+      // valida ao sair do campo; depois do primeiro erro, revalida enquanto a pessoa corrige
+      input.addEventListener("blur", function () { if (input.value.trim() || input.hasAttribute("aria-invalid")) { check(input); } });
+      input.addEventListener(input.tagName === "SELECT" ? "change" : "input", function () { if (input.hasAttribute("aria-invalid")) { check(input); } });
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var firstBad = null;
+      Object.keys(rules).forEach(function (name) {
+        var input = form.elements[name];
+        if (!check(input) && !firstBad) { firstBad = input; }
+      });
+      if (firstBad) { firstBad.focus(); showStatus("Faltam alguns dados. Confira os campos marcados.", true); return; }
       submit.disabled = true;
       submit.setAttribute("aria-busy", "true");
       showStatus("Enviando…", false);
@@ -787,6 +832,38 @@
           submit.removeAttribute("aria-busy");
         });
     });
+  })();
+
+  // Orientação na página (Krug, trunk test): a âncora da seção visível fica marcada no menu.
+  // E a barra fixa do mobile some quando o formulário já está na tela.
+  (function () {
+    "use strict";
+    if (!("IntersectionObserver" in window)) { return; }
+    var links = document.querySelectorAll(".lp-nav-anchors a[href^='#']");
+    var byId = {};
+    links.forEach(function (a) {
+      var sec = document.getElementById(a.getAttribute("href").slice(1));
+      if (sec) { byId[sec.id] = a; }
+    });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) { return; }
+        links.forEach(function (a) { a.removeAttribute("aria-current"); });
+        byId[en.target.id].setAttribute("aria-current", "true");
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    Object.keys(byId).forEach(function (id) { spy.observe(document.getElementById(id)); });
+
+    var sticky = document.querySelector(".lp-sticky");
+    var formSec = document.getElementById("form");
+    if (sticky && formSec) {
+      new IntersectionObserver(function (entries) {
+        var on = entries[0].isIntersecting;
+        sticky.classList.toggle("is-hidden", on);
+        if (on) { sticky.setAttribute("tabindex", "-1"); sticky.setAttribute("aria-hidden", "true"); }
+        else { sticky.removeAttribute("tabindex"); sticky.removeAttribute("aria-hidden"); }
+      }, { threshold: 0.15 }).observe(formSec);
+    }
   })();
 </script>
 </body>

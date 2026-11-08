@@ -272,3 +272,31 @@
 @media (prefers-reduced-motion: reduce) {
   .reveal .app-pb-row > i, .reveal .app-chart .player { transform: none; stroke-dashoffset: 0; transition: none; }
 }
+
+/* ==========================================================================
+   Heurísticas de usabilidade (Krug / Nielsen), nov/2026
+   ========================================================================== */
+
+/* Trunk test / "onde estou": a âncora da seção visível fica marcada no menu */
+.lp-nav-anchors .tabs a[aria-current="true"] { color: var(--ink); background: rgb(var(--color-ink) / .1); }
+
+/* Fitts: alvo de toque mínimo de 44px também no botão do header */
+.btn-sm { min-height: 44px; }
+
+/* Status do sistema (Nielsen 1): botão desabilitado enquanto envia */
+.btn-glass:disabled { opacity: .6; cursor: progress; }
+
+/* Consistência (Nielsen 4): o rótulo do select fica dentro do campo enquanto nada foi escolhido,
+   igual aos outros campos (antes ele já aparecia "subido" com o campo vazio) */
+.field--float select.input:invalid:not(:focus) ~ .float-label { top: 28px; font-size: 14px; font-weight: 400; letter-spacing: normal; text-transform: none; }
+
+/* Erros (Nielsen 9): mensagem em português, específica, logo abaixo do campo */
+.field-error { margin: 6px 2px 0; font-size: 12.5px; line-height: 1.4; color: rgb(var(--color-neg)); }
+.field--float .input[aria-invalid="true"] { box-shadow: inset 0 0 0 1.5px rgb(var(--color-neg) / .85); }
+
+/* A barra fixa do mobile some quando o formulário já está na tela (não cobre o botão de envio) */
+.lp-sticky { transition: transform .25s ease, opacity .25s ease; }
+.lp-sticky.is-hidden { transform: translateY(110%); opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .lp-sticky { transition: none; } }
+/* a mensagem de erro de um campo não estica o campo vizinho na mesma linha */
+.form-row { align-items: start; }

@@ -72,6 +72,19 @@ Prova social: o produto ainda não foi a mercado (MVP em fase final), então nã
 clientes. A página se apoia no produto mostrado, no uso pela comissão da NewMode, na conformidade com a
 Riot e no programa de founder customers. Não inventar números, logos ou depoimentos.
 
+## Heurísticas de usabilidade (nov/2026)
+
+Auditoria com a skill `ux-heuristics` (Krug + Nielsen). Aplicado:
+- Menu marca a seção visível (`aria-current`), para orientar a pessoa na página.
+- Formulário: validação própria em português, embaixo de cada campo, ao sair do campo e no envio
+  (sem JS, vale a validação nativa do navegador); foco vai para o primeiro campo com erro; botão
+  desabilitado enquanto envia; rótulo do select se comporta como os outros campos.
+- Barra fixa do mobile some quando o formulário está na tela (não cobre o botão de envio).
+- Botão do header com 44px de altura (área de toque).
+- Parágrafos da seção de produto cortados pela metade (repetiam os bullets); "founder customers"
+  explicado em português.
+- Pendente por decisão: o header só tem ícones (sem o nome TAB escrito), escolha do Thiago.
+
 ## Pendências
 
 - [ ] **Depoimentos** (`#depoimentos`, escondido com `hidden`): texto, nome e função do coach da NewMode
