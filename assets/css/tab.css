@@ -14,6 +14,9 @@
   --app-warn: #eeb53a;
 }
 
+/* Header: ícone do TAB em branco (o PNG é vermelho; o filtro mantém a forma e troca a cor) */
+.lp-brand img.lp-tab-icon { filter: brightness(0) invert(1); }
+
 /* ---------- Painel do app ---------- */
 .app {
   position: relative; min-width: 0;
