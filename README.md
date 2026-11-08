@@ -11,7 +11,21 @@ Para ver localmente:
 
 e abrir http://127.0.0.1:5500/
 
-## Versão atual (v2, nov/2026)
+## Versão atual (v3, nov/2026): narrativa do problema
+
+Feedback: muita informação; mostrar só o que gera valor nas primeiras dobras e deixar a curiosidade
+levar à conversa. "Seja interessante, não interesseiro" (Alfredo Soares): a página é útil antes de
+vender (calculadora + diagnóstico prometido na conversa).
+
+- CTA: **agendar uma conversa** (não "demo"). Promessa: "você sai sabendo onde a sua comissão perde
+  tempo, mesmo que não feche com a gente" — quem cumpre é o próprio time comercial (os fundadores).
+- H1: "Mais tempo com decisão, menos com organização."
+- Estrutura (7 blocos): hero → a semana que ninguém vê → faça a conta → o que muda (3 resultados + uma
+  tela cortada) → confiança (3 frases) → como é a conversa (+ planos em uma linha) → FAQ (5) → formulário.
+- Saíram: os 5 blocos de funcionalidades, grade de gestão, tabela de perfis, "como começar", FAQ sobre
+  cancelamento (política ainda em formalização). Os estilos `.app-*` não usados continuam em `tab.css`.
+
+## Versão anterior (v2, nov/2026)
 
 Reescrita a partir do protótipo comercial `tab-commercial.html` (NEWMODE/Documentos/TAB). Regra:
 **a página só fala do que existe no protótipo**. Decisões tomadas com o Thiago:

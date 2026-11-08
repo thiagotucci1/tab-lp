@@ -30,7 +30,8 @@
 .feature-list .blk, .lp-offer .blk { opacity: .45; }
 
 /* Spline Sans é mais larga que a Agharti: H1 do hero menor para caber em 2 linhas no desktop */
-.lp-hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.7rem); }
+.lp-hero h1 { font-size: clamp(2rem, 3.9vw, 3.3rem); }
+@media (min-width: 861px) { .lp-hero .split { grid-template-columns: 1.15fr .85fr; } }
 
 /* Header: ícone do TAB em branco (o PNG é vermelho; o filtro mantém a forma e troca a cor) */
 .lp-brand img.lp-tab-icon { filter: brightness(0) invert(1); }
@@ -300,3 +301,51 @@
 @media (prefers-reduced-motion: reduce) { .lp-sticky { transition: none; } }
 /* a mensagem de erro de um campo não estica o campo vizinho na mesma linha */
 .form-row { align-items: start; }
+
+/* ==========================================================================
+   v3 (nov/2026): narrativa do problema, menos informação
+   ========================================================================== */
+
+/* A semana que ninguém vê: linha do tempo + ferramentas convergindo no TAB */
+.week-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
+.week { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: none; }
+.week li { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgb(var(--color-line) / .08); }
+.week li:last-child { border-bottom: 0; }
+.week b { font-family: var(--font-display); font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.week span { font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--ink); }
+.week .week-end b { color: var(--brand-400); }
+.week .week-end span { font-weight: 600; }
+
+.converge { display: grid; justify-items: center; gap: 14px; }
+.converge-tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 320px; }
+.converge-tools span { padding: 8px 14px; border-radius: 999px; font-size: 13px; color: var(--muted); background: rgb(var(--color-ink) / .05); box-shadow: inset 0 0 0 1px rgb(var(--color-line) / .1); text-decoration: line-through; text-decoration-color: rgb(var(--color-ink) / .35); }
+.converge-arrow { font-size: 28px; width: auto; color: var(--faint); transform: rotate(90deg); }
+.converge-tab { display: flex; align-items: center; gap: 12px; padding: 14px 22px; border-radius: 16px; background: rgb(var(--app-panel)); border: 1px solid rgb(255 36 0 / .35); box-shadow: 0 20px 50px -24px rgb(255 36 0 / .45); }
+.converge-tab img { height: 32px; width: auto; filter: brightness(0) invert(1); }
+.converge-tab b { font-size: 1.3rem; letter-spacing: .06em; }
+.big-close { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.25rem, 2.4vw, 1.7rem); color: var(--ink); max-width: 30ch; margin-top: clamp(32px, 5vw, 56px); }
+
+/* Recorte do produto: a tela "some" por baixo, de propósito */
+.teaser { max-width: 720px; margin: clamp(28px, 4vw, 44px) auto 0; }
+.teaser .app { max-height: 300px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent); mask-image: linear-gradient(180deg, #000 55%, transparent); }
+.teaser .app::after { display: none; }
+.teaser-note { text-align: center; color: var(--muted); margin: 6px auto 0; max-width: 46ch; }
+
+/* Confiança: uma faixa, três frases */
+.section--tight { padding-block: clamp(24px, 4vw, 48px); }
+.trust-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.trust-row li { display: flex; gap: 12px; align-items: flex-start; padding: 18px 20px; border-radius: var(--radius); background: rgb(var(--color-ink) / .03); box-shadow: inset 0 0 0 1px rgb(var(--color-line) / .07); color: var(--muted); font-size: .95rem; }
+.trust-row .icon { color: var(--ink); margin-top: 2px; }
+
+/* Planos em uma linha */
+.plans-line { max-width: 760px; margin: clamp(28px, 4vw, 40px) auto 0; padding: 18px 22px; border-radius: var(--radius); background: rgb(var(--color-ink) / .03); box-shadow: inset 0 0 0 1px rgb(var(--color-line) / .08); text-align: center; }
+.plans-line p { margin: 0; }
+.plans-line p + p { margin-top: 6px; font-size: .92rem; }
+
+@media (max-width: 860px) {
+  .week-grid { grid-template-columns: 1fr; }
+  .trust-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .week li { grid-template-columns: 1fr; gap: 2px; padding: 12px 0; }
+}
