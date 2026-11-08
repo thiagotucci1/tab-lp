@@ -1,10 +1,9 @@
 # TAB — Landing Page
 
-Landing page dedicada do NewMode TAB (Tactical Analytics Base), pra conversão (CRO): 1 objetivo só
-(agendar uma conversa). É um recorte autocontido de `index.html` tirado do repositório do site
-institucional da NewMode — sem build, sem dependência de npm, só HTML/CSS/JS direto.
+Landing page do NewMode TAB (Tactical Analytics Base), pensada para conversão: um objetivo só,
+**agendar uma demo**. HTML/CSS/JS direto, sem build e sem npm.
 
-Domínio pretendido: **tabgg.com** (ver "Deploy" abaixo — ainda não configurado).
+Domínio pretendido: **tabgg.com** (ainda não apontado — ver "Deploy").
 
 Para ver localmente:
 
@@ -12,48 +11,59 @@ Para ver localmente:
 
 e abrir http://127.0.0.1:5500/
 
-## O que tem aqui
+## Versão atual (v2, nov/2026)
 
-- `index.html` — a página inteira (hero, problema, calculadora de custo, mercado, solução,
-  galeria do produto, como funciona, anti-intriga, prova e segurança, oferta Free/Pro, FAQ,
-  formulário e rodapé).
-- `assets/css/site.css` — o mesmo design system do site institucional da NewMode ("Liquid Glass
-  Operacional"): vidro, um acento só (`#ff2400`), Agharti nos títulos, Chakra Petch no resto.
-  Tem regra sobrando de outras páginas do site institucional (não usada aqui) — não é erro,
-  só não foi aparado.
-- `assets/js/site.js` + `assets/js/vendor/lenis.min.js` — scroll suave, animações de entrada,
-  botão interativo, menu mobile. A calculadora de custo (seção "Faça a conta") tem lógica própria,
-  inline no fim do `index.html`.
-- `assets/img/tab/` — logos do TAB e as 5 capturas reais da galeria (já com nome, idade, Riot ID
-  e Discord dos jogadores ocultados — ver commit "Galeria com capturas reais" no histórico).
-- `fonts/` — Agharti Black UltraWide (títulos) e Chakra Petch (OFL, resto do texto).
+Reescrita a partir do protótipo comercial `tab-commercial.html` (NEWMODE/Documentos/TAB). Regra:
+**a página só fala do que existe no protótipo**. Decisões tomadas com o Thiago:
 
-Estrutura e copy seguem o documento **"TAB — Estrutura e Copy da Landing Page"**
-(`NEWMODE/Documentos/TAB/`), com os ajustes de marca decididos em outubro/2026 (ver histórico de
-commits do site institucional, de onde este recorte veio, pra todo o raciocínio por trás de cada
-seção e as pendências legais/jurídicas ainda em aberto — autorização do elenco pra publicar os
-números reais na seção "Prova e confiança", revisão jurídica do aviso da Riot no rodapé, etc.).
+- Substitui a v1 (estrutura do doc "TAB — Estrutura e Copy da Landing Page", out/2026).
+- CTA único: agendar demo. Comprador: o coach influencia, o dono/gestor paga. A página fala primeiro com
+  o coach (produto) e depois com o dono (gestão + calculadora).
+- Tráfego: prospecção direta e redes da NewMode (visitante morno), por isso a página é mais curta.
+- Visual híbrido: marca da NewMode nos títulos/CTA (`site.css`) e telas do produto recriadas em HTML no
+  estilo do app (`tab.css`), **sempre com dados fictícios** (nicks do protótipo) e etiqueta "Dados fictícios".
+- Planos: Free (Overview, gestão do roster, agenda, dados básicos da equipe) e Pro (o resto do protótipo).
+  Sem preço na página. Founder customers têm condições especiais (citado sem detalhar). Não citar
+  concorrentes pelo nome (ex.: tracker.gg).
+- Saíram da v1: tabela "o mercado hoje", cena da "terça 22h40", capturas reais do app, números reais do
+  elenco e tudo de psicólogo/check-in (não existe no protótipo). A calculadora ficou.
+
+### Estrutura
+
+Hero (alertas da semana) → faixa de confiança → problema → produto (performance, evolução/H2H,
+pick/ban, AI Insights, relatórios) → gestão (multi-equipe, painel de gestão, agenda, auditoria) →
+calculadora → anti-intriga e dados → depoimentos (escondido) → como começar → planos → FAQ →
+formulário → rodapé.
+
+## Arquivos
+
+- `index.html` — a página inteira. A calculadora e o envio do formulário estão inline no fim.
+- `assets/css/site.css` — design system "Liquid Glass" da NewMode (compartilhado com o site institucional;
+  tem regra de outras páginas sobrando, não é erro).
+- `assets/css/tab.css` — componentes desta página: telas do app (`.app-*`), gestão, planos, depoimentos.
+- `assets/js/site.js` + `vendor/lenis.min.js` — scroll suave, animação de entrada, botões.
+- `assets/img/tab/` — ícone, lockup e imagem de compartilhamento (og).
+- `fonts/` — Agharti Black UltraWide (h1, sempre em caixa alta) e Chakra Petch.
+
+## Formulário
+
+Envia para o Formspree (`https://formspree.io/f/mzeeqyde`) sem sair da página. Tem campo anti-spam
+(`_gotcha`) e assunto fixo. **No primeiro envio, o Formspree manda um e-mail de confirmação para a conta
+dona do formulário**: é preciso confirmar para os pedidos começarem a chegar. O plano grátis aceita
+50 envios por mês.
 
 ## Pendências
 
-- [ ] Preencher "Treinos 7D", "Advertências ativas" e "Prospectos em teste" no próprio app (hoje em
-      branco na tela Overview) e tirar um novo print pra galeria.
-- [ ] E-mail do formulário: hoje `contato@newmode.com.br` (placeholder) — trocar pelo e-mail real,
-      em `index.html` (atributo e no script no fim do arquivo).
-- [ ] Domínio `tabgg.com`: comprar/confirmar e apontar o DNS pro projeto Vercel.
-- [ ] Preço: decisão já tomada de ficar fora da página (convite pra conversa).
-- [ ] Autorização do elenco + jurídico pra publicar os números reais da seção "Prova e confiança"
-      (6 jogadores, 404 check-ins/outs, 1.914 rounds — já estão na página, mas a autorização
-      específica pra esse uso não foi confirmada).
+- [ ] **Depoimentos** (`#depoimentos`, escondido com `hidden`): texto, nome e função do coach da NewMode
+      (autorização pedida) e a fala literal do Victor Goossens do vídeo da EWC (com o original, se for em
+      inglês). Preencher e remover o `hidden`. Manter a nota de que ele não tem relação com o TAB.
+- [ ] Confirmar o Formspree (primeiro envio) e testar o recebimento.
+- [ ] Domínio `tabgg.com`: comprar/confirmar e apontar o DNS para o projeto Vercel `tab-lp`.
+- [ ] FAQ "o que acontece com meus dados se eu cancelar": política de exportação/exclusão ainda em
+      formalização.
 - [ ] Revisão jurídica do aviso de marca da Riot Games no rodapé.
-- [ ] Linha do Coach/Admin na tabela de acesso por perfil (seção "Feito para o time") — o doc
-      original marca como pendente de ajuste final.
 
 ## Deploy
 
-```bash
-npx vercel deploy --prod
-```
-
-Sem build command nem output directory — é estático na raiz. Depois de criar o projeto na Vercel,
-aponte o domínio `tabgg.com` em Project Settings → Domains.
+O repositório está ligado ao projeto Vercel `tab-lp`: cada push na `main` publica em
+https://tab-lp.vercel.app. Manual: `npx vercel deploy --prod`. Sem build command nem output directory.

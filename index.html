@@ -4,28 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TAB | Analytics e gestão de elenco para times de Valorant</title>
-<meta name="description" content="Cruze desempenho tático, estado mental e gestão do elenco num só lugar. Agende uma conversa sobre o TAB para o seu time de Valorant.">
+<meta name="description" content="O TAB organiza os dados do seu elenco de Valorant e coloca a gestão do time no mesmo lugar: performance, pick/ban, agenda, advertências e relatórios. Agende uma demo.">
 <meta name="theme-color" content="#0b1215">
-<meta property="og:title" content="TAB | Analytics e gestão de elenco para times de Valorant">
-<meta property="og:description" content="Sua comissão técnica abre cinco ferramentas para tomar uma decisão. O TAB abre uma.">
+<meta property="og:title" content="TAB | Do dado solto à decisão do time">
+<meta property="og:description" content="Performance, pick/ban, agenda, advertências e relatórios do seu elenco de Valorant, num lugar só. Agende uma demo.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/tab/tab-og.png">
+<meta property="og:image" content="https://tabgg.com/assets/img/tab/tab-og.png">
 <meta property="og:url" content="https://tabgg.com/">
 <link rel="canonical" href="https://tabgg.com/">
 <link rel="icon" type="image/png" href="assets/img/logo/nm-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward,bar_chart,bolt,check,close,expand_more,forum,groups,help,lock,psychology,schedule,verified&display=block" rel="stylesheet">
+<!-- ICONS: manter em ordem alfabética e em sincronia com os ícones usados na página -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward,auto_awesome,calendar_month,check_circle,description,expand_more,history,link,lock,query_stats,shield,stars,verified,visibility_off&display=block" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/tab.css">
 </head>
 <body class="lp-page">
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
-<!-- Landing page dedicada (1 objetivo: agendar uma conversa). Sem o menu das outras páginas, de propósito —
-     cada link a mais é uma saída que compete com o formulário lá embaixo. Estrutura e copy seguem
-     "TAB — Estrutura e Copy da Landing Page" (NEWMODE/Documentos/TAB), com os ajustes pedidos em
-     3/out: sem logo de fundo no hero, selo de conformidade com a API da Riot, oferta Free/Pro sem
-     valor público (convite pra conversa), domínio tabgg.com. -->
+<!-- Landing page do TAB (v2, nov/2026). Um objetivo só: agendar uma demo.
+     Base de conteúdo: o protótipo comercial tab-commercial.html (NEWMODE/Documentos/TAB) — a página
+     só fala do que existe nele. Fluxo: coach (usuário, influencia) → dono/gestor (decide e paga).
+     Telas recriadas em HTML com dados fictícios (nicks do protótipo), nunca dado real de jogador. -->
 <header class="site-header">
   <div class="bar glass-panel">
     <a class="lp-brand" href="#top" aria-label="NewMode TAB — topo da página">
@@ -36,12 +37,13 @@
     </a>
     <nav class="lp-nav-anchors" aria-label="Seções da página">
       <div class="tabs">
-        <a href="#problema">Problema</a>
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#seguranca">Segurança</a>
+        <a href="#produto">Produto</a>
+        <a href="#gestao">Gestão</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">FAQ</a>
       </div>
     </nav>
-    <a class="btn btn-sm" href="#form">Agendar conversa</a>
+    <a class="btn btn-sm" href="#form">Agendar demo</a>
   </div>
 </header>
 
@@ -53,32 +55,29 @@
   <div class="wrap">
     <div class="split">
       <div class="copy">
-        <p class="section-title">Para comissões técnicas</p>
-        <h1>Sua comissão técnica abre cinco ferramentas para tomar uma decisão. O TAB abre uma.</h1>
-        <p class="lead">Visão de cinco ferramentas em um único lugar.</p>
+        <p class="section-title">Para comissões técnicas e gestores de Valorant</p>
+        <h1>Do dado solto à decisão do time.</h1>
+        <p class="lead">O <span class="tab-mark">TAB</span> organiza os números do seu elenco e coloca a gestão do time no mesmo lugar: performance, pick/ban, agenda, advertências e relatórios.</p>
         <div class="lp-hero-actions">
-          <a class="btn-glass" href="#form">Agendar uma conversa <span class="icon" aria-hidden="true">arrow_forward</span></a>
-          <a class="lp-hero-more" href="#como-funciona">Ver como funciona ↓</a>
+          <a class="btn-glass" href="#form">Agendar uma demo <span class="icon" aria-hidden="true">arrow_forward</span></a>
+          <a class="lp-hero-more" href="#produto">Ver o produto ↓</a>
         </div>
-        <p class="lp-microcopy">O <span class="tab-mark">TAB</span> tem versão <b>Free</b> e versão <b>Pro</b> — os valores a gente mostra numa conversa, sem compromisso.</p>
-        <p class="lp-trust"><span class="icon" aria-hidden="true">bolt</span>Construído dentro de uma organização, com elenco real, por quem opera elenco.</p>
-        <p class="lp-trust lp-trust--badge"><span class="icon" aria-hidden="true">verified</span>Em conformidade com as políticas de API da Riot Games para dados de partida.</p>
+        <p class="lp-microcopy">Versões <b>Free</b> e <b>Pro</b>. Os valores a gente apresenta na demo, sem compromisso.</p>
+        <p class="lp-trust lp-trust--badge"><span class="icon" aria-hidden="true">verified</span>Em conformidade com as políticas de API da Riot Games.</p>
       </div>
-      <div class="lp-mock-wrap reveal">
-        <div class="lp-mock card">
-          <div class="lp-mock-top">
-            <span>Overview · Alertas da semana</span>
-            <span class="tag">Exemplo ilustrativo</span>
+
+      <div class="reveal">
+        <div class="app" role="img" aria-label="Tela de alertas do TAB com dados fictícios: 3 jogadores precisam de atenção esta semana e 1 está em alta">
+          <div class="app-head">
+            <p class="app-title"><span class="icon" aria-hidden="true">shield</span>3 jogadores precisam de atenção esta semana · 1 em alta</p>
+            <span class="app-fake">Dados fictícios</span>
           </div>
-          <div class="lp-mock-kpis">
-            <div class="lp-mock-kpi"><span>Vitória no ataque</span><div class="lp-mock-bar"><i style="width:64%"></i></div></div>
-            <div class="lp-mock-kpi"><span>Vitória na defesa</span><div class="lp-mock-bar"><i style="width:51%"></i></div></div>
-            <div class="lp-mock-kpi"><span>Decididos no retake</span><div class="lp-mock-bar"><i style="width:73%"></i></div></div>
+          <div class="app-alerts">
+            <div class="app-alert app-alert--crit"><strong><span>CRÍTICO</span>Luma · Iniciador</strong><p>Caiu de Imortal 1 para Ascendente 3 no ato atual.</p></div>
+            <div class="app-alert app-alert--warn"><strong><span>QUEDA</span>Nox · Controlador</strong><p>ACS de 171 nas últimas 5 partidas; média do ato: 216.</p></div>
+            <div class="app-alert app-alert--none"><strong><span>SEM DADO</span>Kairo · Flex</strong><p>Conta Riot sem sincronização; histórico individual pendente.</p></div>
+            <div class="app-alert app-alert--up"><strong><span>EM ALTA</span>Vex · Duelista</strong><p>ACS de 287 nas últimas 5 partidas; média do ato: 252.</p></div>
           </div>
-          <div class="lp-mock-rounds" aria-hidden="true">
-            <i class="win" style="height:70%"></i><i class="loss" style="height:35%"></i><i class="win" style="height:85%"></i><i class="win" style="height:50%"></i><i class="loss" style="height:60%"></i><i class="win" style="height:40%"></i><i class="loss" style="height:75%"></i><i class="win" style="height:55%"></i><i class="win" style="height:90%"></i><i class="loss" style="height:30%"></i><i class="win" style="height:65%"></i><i class="win" style="height:45%"></i>
-          </div>
-          <p class="lp-mock-caption">Pré-visualização ilustrativa — não representa dados reais de nenhum time. <!-- Troque por print real da tela Overview assim que o print estiver aprovado (ver nota na seção "produto por dentro" mais abaixo). --></p>
         </div>
       </div>
     </div>
@@ -87,61 +86,313 @@
 
 <section class="lp-proof">
   <div class="wrap reveal">
-    <p>Testado em competição real, não em laboratório.</p>
+    <p>Usado pela comissão técnica da NewMode em competição.</p>
     <div class="tags">
       <span class="tag tag--brand">Valorant</span>
-      <span class="tag">Tier 3 · Brasil</span>
-      <span class="tag">Comissão técnica NewMode</span>
+      <span class="tag">API da Riot Games</span>
+      <span class="tag">Consentimento do jogador</span>
+      <span class="tag">LGPD</span>
     </div>
   </div>
 </section>
 
-<!-- ============================== 2. O PROBLEMA, COM TAMANHO ============================== -->
+<!-- ============================== 2. PROBLEMA ============================== -->
 <section class="section" id="problema">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="section-title">O problema</p>
-      <h2>O problema não é falta de dado. É dado em cinco lugares.</h2>
+      <h2>Número solto não decide nada.</h2>
+      <p class="lead">Estatística de jogador qualquer site mostra. O que ninguém mostra é o time: quem caiu, em que mapa, desde quando, e o que a comissão fez a respeito.</p>
     </div>
-
-    <blockquote class="card lp-scene reveal">
-      <p>Terça, 22h40. O time perdeu o scrim por três rounds. Você abre o tracker para ver o desempenho, a planilha para ver quem treinou, o VOD para achar o erro, o chat para lembrar quem avisou que não dormiu, e as anotações do psicólogo, se ele puder compartilhar. Uma hora depois, você tem cinco abas abertas e uma suspeita. Amanhã você vai escalar com base nela.</p>
-    </blockquote>
-
-    <div class="grid lp-costs">
+    <div class="grid prob-grid">
       <article class="card reveal">
-        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">schedule</span></div>
-        <h3>Horas montando, não decidindo</h3>
-        <p>Antes de cada decisão, alguém junta dado de lugares que não conversam. Essas horas saem da preparação, que é onde o time ganha.</p>
+        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">query_stats</span></div>
+        <h3>Estatística sem contexto</h3>
+        <p>Você vê o K/D de cada um, mas não vê que o controlador está caindo há três semanas, nem que o time perde quase tudo em Lotus.</p>
       </article>
       <article class="card reveal">
-        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">help</span></div>
-        <h3>Palpite com cara de análise</h3>
-        <p>Você sente que um jogador está mal, mas não consegue provar nem explicar o motivo. A escalação sai do instinto, e o instinto fica sem defesa na reunião.</p>
+        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">calendar_month</span></div>
+        <h3>Gestão espalhada</h3>
+        <p>Agenda na planilha, advertência no Discord, log de scrim no caderno de alguém. Para juntar tudo antes de uma decisão, alguém perde horas.</p>
       </article>
       <article class="card reveal">
-        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">groups</span></div>
-        <h3>O sinal chega tarde</h3>
-        <p>Sono ruim, humor em queda e fadiga aparecem no resultado antes de aparecerem na conversa. Quando o coach percebe, o prejuízo já está no placar.</p>
-      </article>
-      <article class="card reveal">
-        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">forum</span></div>
-        <h3>Informação que vira intriga</h3>
-        <p>Dado solto circula do jeito errado: ranking vazado, advertência comentada, comparação sem contexto. Sem controle de quem vê o quê, a ferramenta vira munição.</p>
+        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">history</span></div>
+        <h3>Decisão sem registro</h3>
+        <p>O que a comissão decidiu, e por quê, some no chat. Quando o resultado chega, ninguém lembra em que dado a escolha se apoiou.</p>
       </article>
     </div>
-
-    <p class="lp-section-close reveal">Se você reconheceu pelo menos dois desses custos, o próximo bloco mostra o tamanho deles no seu time.</p>
+    <p class="lp-section-close reveal">O <span class="tab-mark">TAB</span> junta as três coisas: os números, a rotina do time e o registro do que foi decidido.</p>
   </div>
 </section>
 
-<!-- ============================== 3. CALCULADORA ============================== -->
+<!-- ============================== 3. PRODUTO (para o coach) ============================== -->
+<section class="section" id="produto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-title">O produto</p>
+      <h2>Tudo o que a comissão abre antes de escalar, numa tela só.</h2>
+      <p class="lead">As telas abaixo são do <span class="tab-mark">TAB</span>, recriadas com dados fictícios. Na demo, você vê o produto rodando.</p>
+    </div>
+
+    <!-- 3a. Quem precisa de atenção / MVP -->
+    <div class="feature">
+      <div class="split">
+        <div class="copy reveal">
+          <span class="feature-n">01 · Performance</span>
+          <h3>Saiba quem precisa de atenção antes do treino começar.</h3>
+          <p>O <span class="tab-mark">TAB</span> compara as últimas partidas de cada jogador com a média do ato e aponta quem está caindo, quem está em alta e quem é o mais consistente.</p>
+          <ul class="feature-list">
+            <li><span class="blk"></span>Alertas de queda de elo e de desempenho</li>
+            <li><span class="blk"></span>MVP da semana, maior subida, maior queda</li>
+            <li><span class="blk"></span>Leaderboard interno por stat: Rating, KDR, ACS, ADR, HS%, KAST</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="app" role="img" aria-label="Painel de performance com dados fictícios: MVP da semana Vex, com 5 partidas, ACS 289,4, 80% de vitórias e KDR 1,71">
+            <div class="app-head"><span class="app-kicker">Performance · Overview</span><span class="app-fake">Dados fictícios</span></div>
+            <div class="app-mvp">
+              <div class="app-mvp-id"><small>MVP DA SEMANA · 2026-W43</small><b>Vex</b><span>DUELISTA · MAIOR ACS DA SEMANA</span></div>
+              <div class="app-metrics">
+                <div class="app-metric"><span>PARTIDAS</span><b>5</b></div>
+                <div class="app-metric"><span>ACS</span><b>289,4</b></div>
+                <div class="app-metric"><span>WIN %</span><b>80%</b></div>
+                <div class="app-metric"><span>KDR</span><b>1,71</b></div>
+              </div>
+            </div>
+            <div class="app-highlights">
+              <div class="app-hl"><small>↗ MAIOR SUBIDA</small><b>Vex</b><strong class="pos">+35 ACS</strong></div>
+              <div class="app-hl"><small>↘ MAIOR QUEDA</small><b>Nox</b><strong class="neg">−45 ACS</strong></div>
+              <div class="app-hl"><small>◎ MAIS CONSISTENTE</small><b>Echo</b><strong>±2 ACS</strong></div>
+            </div>
+            <p class="app-note">Últimas 5 partidas vs. média do ato.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3b. Evolução + Head-to-Head -->
+    <div class="feature">
+      <div class="split split--rev">
+        <div class="copy reveal">
+          <span class="feature-n">02 · Evolução e comparativos</span>
+          <h3>Veja a trajetória, não só a foto de hoje.</h3>
+          <p>A evolução semana a semana de cada jogador contra a média do elenco, e um duelo 1v1 interno quando você precisa decidir entre dois nomes para a mesma função.</p>
+          <ul class="feature-list">
+            <li><span class="blk"></span>Evolução semanal de KDR, ACS, ADR e HS%</li>
+            <li><span class="blk"></span>Head-to-Head entre dois jogadores do elenco</li>
+            <li><span class="blk"></span>Histórico: compare duas semanas de um mesmo jogador</li>
+            <li><span class="blk"></span>Pool de agentes por jogador e do elenco</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="app" role="img" aria-label="Gráfico de evolução semanal com dados fictícios: o ACS de Vex sobe de 242 para 287 entre as semanas 36 e 43, acima da média do elenco. Abaixo, comparação Head-to-Head entre Vex e Luma">
+            <div class="app-head"><span class="app-kicker">Evolução · ACS por semana</span><span class="app-fake">Dados fictícios</span></div>
+            <div class="app-legend"><span><i style="background:var(--brand)"></i>Vex</span><span><i style="background:var(--muted);opacity:.6"></i>média do elenco</span></div>
+            <svg class="app-chart" viewBox="0 0 640 220" aria-hidden="true">
+              <line class="grid-line" x1="34" x2="606" y1="34" y2="34"/><text class="axis" x="0" y="38">290</text>
+              <line class="grid-line" x1="34" x2="606" y1="110" y2="110"/><text class="axis" x="0" y="114">250</text>
+              <line class="grid-line" x1="34" x2="606" y1="186" y2="186"/><text class="axis" x="0" y="190">210</text>
+              <polyline class="team" points="34,163.2 115.7,165.1 197.4,161.3 279.1,163.2 360.9,165.1 442.6,168.9 524.3,174.6 606,178.4"/>
+              <polyline class="player" points="34,125.2 115.7,130.9 197.4,121.4 279.1,115.7 360.9,106.2 442.6,87.2 524.3,62.5 606,39.7"/>
+              <circle cx="34" cy="125.2" r="4"/><circle cx="115.7" cy="130.9" r="4"/><circle cx="197.4" cy="121.4" r="4"/><circle cx="279.1" cy="115.7" r="4"/><circle cx="360.9" cy="106.2" r="4"/><circle cx="442.6" cy="87.2" r="4"/><circle cx="524.3" cy="62.5" r="4"/><circle cx="606" cy="39.7" r="4"/>
+              <text class="pt" x="34" y="113">242</text><text class="pt" x="197.4" y="109">244</text><text class="pt" x="360.9" y="94">252</text><text class="pt" x="524.3" y="50">275</text><text class="pt" x="596" y="27">287</text>
+              <text class="axis" x="34" y="212" text-anchor="middle">W36</text><text class="axis" x="115.7" y="212" text-anchor="middle">W37</text><text class="axis" x="197.4" y="212" text-anchor="middle">W38</text><text class="axis" x="279.1" y="212" text-anchor="middle">W39</text><text class="axis" x="360.9" y="212" text-anchor="middle">W40</text><text class="axis" x="442.6" y="212" text-anchor="middle">W41</text><text class="axis" x="524.3" y="212" text-anchor="middle">W42</text><text class="axis" x="606" y="212" text-anchor="middle">W43</text>
+            </svg>
+            <div class="app-h2h">
+              <div class="app-h2h-row head"><span>Vex</span><div class="app-h2h-stat"><small>HEAD-TO-HEAD</small></div><span>Luma</span></div>
+              <div class="app-h2h-row"><span class="a">▸ 1,42</span><div class="app-h2h-stat"><small>KDR</small><div class="app-h2h-bar"><i class="a" style="width:52.6%"></i><i class="b" style="width:47.4%"></i></div></div><span>1,28</span></div>
+              <div class="app-h2h-row"><span class="a">▸ 268,5</span><div class="app-h2h-stat"><small>ACS</small><div class="app-h2h-bar"><i class="a" style="width:54.5%"></i><i class="b" style="width:45.5%"></i></div></div><span>224,1</span></div>
+              <div class="app-h2h-row"><span class="a">▸ 58%</span><div class="app-h2h-stat"><small>WIN%</small><div class="app-h2h-bar"><i class="a" style="width:53.7%"></i><i class="b" style="width:46.3%"></i></div></div><span>50%</span></div>
+              <div class="app-h2h-row"><span>70%</span><div class="app-h2h-stat"><small>KAST</small><div class="app-h2h-bar"><i class="a" style="width:48.6%"></i><i class="b" style="width:51.4%"></i></div></div><span class="b">74% ◂</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3c. Mapas + Pick/Ban -->
+    <div class="feature">
+      <div class="split">
+        <div class="copy reveal">
+          <span class="feature-n">03 · Mapas e Pick/Ban</span>
+          <h3>Chegue ao veto sabendo onde o time ganha.</h3>
+          <p>O winrate do time por mapa, com scrims e oficiais, e o de cada jogador na ranked. O <span class="tab-mark">TAB</span> sugere o que pickar e o que banir a partir das partidas da própria equipe.</p>
+          <ul class="feature-list">
+            <li><span class="blk"></span>Heatmap de winrate por mapa: time e jogadores</li>
+            <li><span class="blk"></span>Recomendação de pick e ban com a regra à vista</li>
+            <li><span class="blk"></span>Filtros por ato, semana, função, agente, mapa e lado</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="app" role="img" aria-label="Recomendação de pick e ban com dados fictícios: pickar Ascent (72%) e Haven (63%), banir Abyss (40%) e Lotus (33%)">
+            <div class="app-head"><span class="app-kicker">Estratégia · Pick / Ban</span><span class="app-fake">Dados fictícios</span></div>
+            <p class="app-pb-sum"><b class="pos">✓ PICK:</b> Ascent, Haven &nbsp; <b class="neg">✕ BAN:</b> Abyss, Lotus</p>
+            <div class="app-pb">
+              <div class="app-pb-row pick"><i style="width:72%"></i><span class="app-pb-map">✓ <strong>Ascent</strong> <span class="app-badge app-badge--pos">Pick</span></span><span><small>WIN%</small><b>72%</b></span><span><small>KD</small><b>1,06</b></span><span><small>JOGOS</small><b>7</b></span></div>
+              <div class="app-pb-row pick"><i style="width:63%"></i><span class="app-pb-map">✓ <strong>Haven</strong> <span class="app-badge app-badge--pos">Pick</span></span><span><small>WIN%</small><b>63%</b></span><span><small>KD</small><b>1,04</b></span><span><small>JOGOS</small><b>8</b></span></div>
+              <div class="app-pb-row"><i style="width:55%"></i><span class="app-pb-map">· <strong>Bind</strong></span><span><small>WIN%</small><b>55%</b></span><span><small>KD</small><b>1,00</b></span><span><small>JOGOS</small><b>6</b></span></div>
+              <div class="app-pb-row"><i style="width:50%"></i><span class="app-pb-map">· <strong>Sunset</strong></span><span><small>WIN%</small><b>50%</b></span><span><small>KD</small><b>0,99</b></span><span><small>JOGOS</small><b>4</b></span></div>
+              <div class="app-pb-row ban"><i style="width:40%"></i><span class="app-pb-map">✕ <strong>Abyss</strong> <span class="app-badge app-badge--neg">Ban</span></span><span><small>WIN%</small><b>40%</b></span><span><small>KD</small><b>0,96</b></span><span><small>JOGOS</small><b>5</b></span></div>
+              <div class="app-pb-row ban"><i style="width:33%"></i><span class="app-pb-map">✕ <strong>Lotus</strong> <span class="app-badge app-badge--neg">Ban</span></span><span><small>WIN%</small><b>33%</b></span><span><small>KD</small><b>0,93</b></span><span><small>JOGOS</small><b>6</b></span></div>
+            </div>
+            <p class="app-note">Regra: pick com 60% ou mais de vitórias e 3+ jogos; ban abaixo de 45%.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3d. AI Insights -->
+    <div class="feature">
+      <div class="split split--rev">
+        <div class="copy reveal">
+          <span class="feature-n">04 · AI Insights</span>
+          <h3>A IA sugere. A comissão decide.</h3>
+          <p>O <span class="tab-mark">TAB</span> lê as partidas e os logs da equipe e propõe pontos de atenção. Nada vira conclusão sozinho: cada insight passa pela revisão da comissão, que aprova, descarta e anota o contexto.</p>
+          <ul class="feature-list">
+            <li><span class="blk"></span>Insights com a fonte de onde vieram</li>
+            <li><span class="blk"></span>Aprovar, descartar ou deixar pendente</li>
+            <li><span class="blk"></span>Nota privada da comissão em cada insight</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="app app-insight" role="img" aria-label="Exemplo de insight da IA, com dados fictícios, aguardando revisão da comissão">
+            <div class="app-head"><span class="app-kicker"><span class="icon" aria-hidden="true" style="font-size:14px;color:var(--brand)">auto_awesome</span> AI Insights</span><span class="app-fake">Dados fictícios</span></div>
+            <span class="app-badge">Pendente</span>
+            <h4>Retakes: transformar vantagem em conversão</h4>
+            <p>Em Abyss e Lotus a equipe venceu 3 de 11 partidas no ato. Revisar utilitários e retakes antes de atribuir causas individuais.</p>
+            <p class="app-src">Fonte: partidas e logs da equipe ativa. Confiança e causalidade exigem revisão humana.</p>
+            <div class="app-review">
+              <div class="app-review-row"><span>Decisão</span><span class="app-btn is-on">Aprovar</span><span class="app-btn">Descartar</span><span class="app-btn">Pendente</span></div>
+              <div class="app-textarea">Nota privada da comissão…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3e. Relatórios -->
+    <div class="feature">
+      <div class="split">
+        <div class="copy reveal">
+          <span class="feature-n">05 · Relatórios</span>
+          <h3>Leve o resumo pronto para a reunião.</h3>
+          <p>Relatório do período da equipe, com aproveitamento, MVP e os insights que a comissão aprovou. Ou o relatório individual de um jogador, com desempenho, histórico ranqueado e advertências. Os dois saem em PDF.</p>
+          <ul class="feature-list">
+            <li><span class="blk"></span>Relatório do time e relatório individual</li>
+            <li><span class="blk"></span>Só entram os insights aprovados pela comissão</li>
+            <li><span class="blk"></span>Pronto para imprimir ou salvar em PDF</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="app" role="img" aria-label="Prévia de relatório do período em PDF, com dados fictícios">
+            <div class="app-head"><span class="app-kicker"><span class="icon" aria-hidden="true" style="font-size:14px;color:var(--brand)">description</span> Relatório do período</span><span class="app-fake">Dados fictícios</span></div>
+            <div class="app-report">
+              <h4>Equipe Principal · relatório do período · outubro/2026</h4>
+              <p>26 partidas da equipe · 15 vitórias · 58% de aproveitamento</p>
+              <h5>MVP da semana (2026-W43): Vex</h5>
+              <p>ACS 289,4 na semana (média do ato: 252) · KDR 1,71 · 5 partidas</p>
+              <h5>Últimas partidas</h5>
+              <table>
+                <thead><tr><th>Data</th><th>Modalidade</th><th>Mapa</th><th>Placar</th></tr></thead>
+                <tbody>
+                  <tr><td>22/10</td><td>Oficial</td><td>Ascent</td><td class="w">13 : 8</td></tr>
+                  <tr><td>21/10</td><td>Scrim</td><td>Lotus</td><td class="l">9 : 13</td></tr>
+                  <tr><td>20/10</td><td>Scrim</td><td>Haven</td><td class="w">13 : 11</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="app-report-actions"><span class="app-btn app-btn--primary">Imprimir / salvar PDF</span><span class="app-btn">Relatório individual…</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="reveal" style="text-align:center;margin-top:clamp(20px,3vw,32px)">
+      <a class="btn-glass" href="#form">Agendar uma demo <span class="icon" aria-hidden="true">arrow_forward</span></a>
+    </p>
+  </div>
+</section>
+
+<!-- ============================== 4. GESTÃO (para quem decide e paga) ============================== -->
+<section class="section" id="gestao">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-title">Para quem gere a organização</p>
+      <h2>A operação do time registrada, não perdida no Discord.</h2>
+      <p class="lead">Agenda, logs de treino e scrim, advertências e o histórico de quem fez o quê. Para uma equipe ou para todas as equipes da organização.</p>
+    </div>
+
+    <div class="mgmt-grid">
+      <article class="mgmt-card reveal">
+        <h3>Várias equipes, cada uma com o seu responsável</h3>
+        <p>O dono da organização vê todas as equipes, cria line-ups novas e delega cada uma a um Admin. O Admin gere só a equipe que é dele.</p>
+        <div class="app" role="img" aria-label="Seleção de equipes da organização, com dados fictícios: Equipe Principal e Academy, cada uma com coach e admin">
+          <div class="app-head"><span class="app-kicker">Equipes da organização</span><span class="app-fake">Dados fictícios</span></div>
+          <div class="app-teams">
+            <div class="app-team is-active"><div><strong>Equipe Principal</strong><small>Coach e Admin próprios · 5 jogadores · equipe ativa</small></div><span class="app-badge app-badge--brand">Ativa</span></div>
+            <div class="app-team"><div><strong>Academy</strong><small>Coach e Admin próprios · 5 jogadores</small></div><span class="app-btn">Abrir equipe</span></div>
+          </div>
+          <p class="app-note" style="margin-top:14px">Perfis de acesso</p>
+          <div class="app-personas" style="margin-top:6px"><span class="app-badge app-badge--brand">Owner</span><span class="app-badge">Admin</span><span class="app-badge">Coach</span><span class="app-badge">Player</span></div>
+        </div>
+      </article>
+
+      <article class="mgmt-card reveal">
+        <h3>A semana do time em três números</h3>
+        <p>Advertências em aberto, aproveitamento nos scrims da semana e registros que ainda faltam fechar. Um clique leva ao detalhe.</p>
+        <div class="app" role="img" aria-label="Painel de gestão com dados fictícios: 2 advertências em aberto, 67% de aproveitamento em scrims na semana e 1 registro pendente">
+          <div class="app-head"><span class="app-kicker">Gestão · só administração</span><span class="app-fake">Dados fictícios</span></div>
+          <div class="app-mgmt">
+            <div><small>ADVERTÊNCIAS</small><b>2</b><span>em aberto · <em>1 grave</em></span></div>
+            <div><small>SCRIMS · SEMANA 43</small><b>67%</b><span>2V 1D em 3 scrims</span></div>
+            <div><small>REGISTROS PENDENTES</small><b>1</b><span>Review tático · Lotus</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="mgmt-card reveal">
+        <h3>Agenda e logs de treino e scrim</h3>
+        <p>Treinos, scrims, oficiais e reuniões num calendário só. Depois de cada sessão, o log registra o que foi feito e o próximo foco.</p>
+        <div class="app" role="img" aria-label="Próximos compromissos da equipe, com dados fictícios: scrim, treino, revisão de VOD, reunião e partida oficial">
+          <div class="app-head"><span class="app-kicker">Próximos compromissos</span><span class="app-fake">Dados fictícios</span></div>
+          <div class="app-agenda">
+            <div class="app-day today"><span>Sex · 19:00</span><b>HOJE</b><small>Scrim</small><strong>Scrim de preparação</strong></div>
+            <div class="app-day"><span>Sáb · 15:00</span><small>Treino</small><strong>Execuções de ataque</strong></div>
+            <div class="app-day"><span>Dom · 15:00</span><small>Treino</small><strong>Revisão de VOD</strong></div>
+            <div class="app-day"><span>Seg · 16:00</span><small>Reunião</small><strong>Planejamento técnico</strong></div>
+            <div class="app-day official"><span>Qua · 14:00</span><small>Oficial</small><strong>Campeonato · rodada 3</strong></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="mgmt-card reveal">
+        <h3>Advertências e auditoria</h3>
+        <p>Advertências por jogador, com gravidade e histórico. E uma trilha de auditoria com as ações relevantes, para saber quem fez o quê e quando.</p>
+        <div class="app" role="img" aria-label="Trilha de auditoria com dados fictícios: criação de sessão na agenda, publicação de log e revogação de consentimento Riot">
+          <div class="app-head"><span class="app-kicker">Trilha de auditoria</span><span class="app-fake">Dados fictícios</span></div>
+          <div class="app-scroll">
+            <table class="app-audit">
+              <thead><tr><th>Data/hora</th><th>Perfil</th><th>Ação</th><th>Onde</th></tr></thead>
+              <tbody>
+                <tr><td>23/10 18:42</td><td>Admin</td><td>Criar sessão</td><td>Agenda</td></tr>
+                <tr><td>23/10 19:15</td><td>Coach</td><td>Publicar log</td><td>Logs de treino/scrim</td></tr>
+                <tr><td>24/10 09:10</td><td>Admin</td><td>Revogar consentimento Riot</td><td>Integração</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 5. CALCULADORA ============================== -->
 <section class="section" id="calculadora">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="section-title">Faça a conta</p>
       <h2>Quanto custa o seu processo de decisão hoje?</h2>
-      <p class="lead">Responda três perguntas rápidas. O resultado aparece na hora, sem cadastro.</p>
+      <p class="lead">Responda rápido. O resultado aparece na hora, sem cadastro.</p>
     </div>
 
     <div class="card lp-calc reveal">
@@ -170,231 +421,154 @@
           <p class="lp-calc-big">Sua comissão gasta <b id="calc-horas-mes">—</b> por mês juntando dado em vez de analisar.</p>
           <p class="lp-calc-sub" id="calc-dias-linha">Isso equivale a <b id="calc-dias">—</b> de trabalho por ano<span id="calc-custo-linha"></span>.</p>
           <p class="lp-calc-tools" id="calc-tools-linha"></p>
-          <p class="lp-calc-note">E isso sem contar o que não aparece na conta: a decisão tomada sem o dado cruzado.</p>
-          <a class="btn-glass" href="#form">Falar com a NewMode sobre isso <span class="icon" aria-hidden="true">arrow_forward</span></a>
+          <p class="lp-calc-note">E isso sem contar o que não aparece na conta: a decisão tomada com dado pela metade.</p>
+          <a class="btn-glass" href="#form">Agendar uma demo <span class="icon" aria-hidden="true">arrow_forward</span></a>
         </div>
       </div>
-      <p class="lp-calc-assumption">Considera semanas de 4,33 por mês e jornada de 8 horas por dia. Você pode mudar os números acima a qualquer momento.</p>
+      <p class="lp-calc-assumption">Considera 4,33 semanas por mês e jornada de 8 horas por dia. Você pode mudar os números acima a qualquer momento.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================== 4. POR QUE O MERCADO NÃO RESOLVE ============================== -->
-<section class="section" id="mercado">
+<!-- ============================== 6. ANTI-INTRIGA E DADOS ============================== -->
+<section class="section" id="seguranca">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="section-title">Por que o que existe não resolve</p>
-      <h2>Cada ferramenta resolve uma peça. Ninguém cruza as peças.</h2>
+      <p class="section-title">Anti-intriga e dados</p>
+      <h2>Cada um vê o que o seu papel pede. E nada de adversário.</h2>
+      <p class="lead">O jogador vê os próprios números, não o ranking do vestiário. E a plataforma só trabalha com dados do seu próprio elenco, com o consentimento de cada jogador.</p>
     </div>
+
     <div class="lp-table-wrap reveal">
       <table class="lp-table card">
-        <thead>
-          <tr><th>Categoria</th><th>O que faz bem</th><th>O que não faz</th></tr>
-        </thead>
+        <thead><tr><th>Perfil</th><th>O que acessa</th></tr></thead>
         <tbody>
-          <tr><td>Vídeo e tagging tático</td><td>Revisão de jogadas, marcação de eventos</td><td>Não sabe como o jogador dormiu nem se estava em ciclo de advertência</td></tr>
-          <tr><td>Dados físicos e de saúde</td><td>Carga, recuperação, risco de lesão</td><td>Foi desenhada para esporte tradicional; ignora o contexto de jogo e o mental</td></tr>
-          <tr><td>Bem-estar mental</td><td>Check-in, acompanhamento, rotina de mente</td><td>Fica isolada do desempenho: ninguém liga o humor de ontem ao round de hoje</td></tr>
-          <tr><td>Observação e tática de esports</td><td>Leitura de partida nativa do jogo</td><td>Resolve só a camada tática</td></tr>
-          <tr><td>Planilha e chat</td><td>Flexível, grátis, todo mundo sabe usar</td><td>Cruzar é trabalho manual, e a informação circula sem controle</td></tr>
+          <tr><td>Owner</td><td>Toda a organização e todas as equipes. Cria equipes e nomeia os Admins.</td></tr>
+          <tr><td>Admin</td><td>A equipe atribuída a ele: elenco, agenda, logs, advertências, configurações e auditoria.</td></tr>
+          <tr><td>Coach</td><td>A rotina técnica da equipe: performance completa, relatórios, AI Insights, elenco e logs.</td></tr>
+          <tr><td>Player</td><td>Só os próprios números, a própria agenda e as próprias advertências. Sem rankings internos, médias do elenco ou dados dos colegas.</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="lp-section-close reveal">O <span class="tab-mark">TAB</span> não pede que você jogue fora o que funciona. Pede que você pare de ser o integrador manual entre todas elas.</p>
-  </div>
-</section>
 
-<!-- ============================== 5. A SOLUÇÃO: O CRUZAMENTO ============================== -->
-<section class="section" id="solucao">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="section-title">A solução</p>
-      <h2>O TAB cruza o que você só sentia.</h2>
-      <p class="lead">Desempenho tático, estado mental e gestão do elenco, ligados por um sistema que mostra o raciocínio e a fonte.</p>
-    </div>
-
-    <div class="card lp-alert reveal">
-      <div class="lp-alert-top">
-        <span class="lp-alert-player"><span class="icon" aria-hidden="true">bolt</span>Jogador Exemplo — Iniciador</span>
-        <span class="tag">Exemplo ilustrativo · dados fictícios</span>
+    <div class="trust-grid">
+      <div class="app reveal" role="img" aria-label="Contas Riot do elenco, com dados fictícios: cada conta é conectada com consentimento do jogador e pode ser revogada">
+        <div class="app-head"><p class="app-title"><span class="icon" aria-hidden="true">link</span>Contas Riot do elenco</p><span class="app-fake">Dados fictícios</span></div>
+        <div class="app-scope"><span class="icon" aria-hidden="true">shield</span><div><strong>Escopo de uso dos dados</strong>A plataforma publica só dados do próprio time. Não consulta, compara nem exibe contas de jogadores de equipes adversárias.</div></div>
+        <div class="app-riot">
+          <div class="app-riot-row"><div><strong>Vex</strong> <span class="app-badge app-badge--pos">Conectada</span><small>Consentimento do jogador ativo</small></div><div><span class="app-btn">Sincronizar</span><span class="app-btn">Revogar</span></div></div>
+          <div class="app-riot-row"><div><strong>Kairo</strong> <span class="app-badge">Sem conta vinculada</span><small>Conta ainda não sincronizada</small></div><div><span class="app-btn app-btn--primary">Conectar conta Riot</span></div></div>
+        </div>
       </div>
-      <p class="lp-alert-text">Sono 4,2 h, humor 3/10 no check-in de ontem. K/D 19% abaixo da média das últimas 4 semanas. Risco de decisão ruim em round de pressão hoje.</p>
-      <p class="lp-alert-source">Fontes: check-in de 02/10 · últimas 12 partidas · 2 faltas justificadas na semana</p>
+      <div class="card reveal" style="padding:clamp(22px,3vw,30px)">
+        <ul class="checklist">
+          <li><span class="icon" aria-hidden="true">visibility_off</span>Player não vê rankings, notas privadas nem estatísticas dos colegas</li>
+          <li><span class="icon" aria-hidden="true">lock</span>A conta Riot só é conectada com o consentimento do jogador, que pode revogar quando quiser</li>
+          <li><span class="icon" aria-hidden="true">shield</span>Nenhum dado de adversário: o <span class="tab-mark">TAB</span> não serve para observar rivais</li>
+          <li><span class="icon" aria-hidden="true">verified</span>Em conformidade com as políticas de API da Riot Games e com a LGPD</li>
+        </ul>
+      </div>
     </div>
-
-    <div class="grid lp-benefits">
-      <article class="card reveal">
-        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">bar_chart</span></div>
-        <h3>Desempenho que se explica</h3>
-        <p>Partidas sincronizadas automaticamente, scoreboard round a round e abas de performance por jogador e por time.</p>
-      </article>
-      <article class="card reveal">
-        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">psychology</span></div>
-        <h3>O estado do jogador entra na conta</h3>
-        <p>Diário de bordo e ocorrências comportamentais acompanhados pelo psicólogo, com acesso isolado.</p>
-      </article>
-      <article class="card reveal">
-        <div class="lp-benefit-icon"><span class="icon" aria-hidden="true">groups</span></div>
-        <h3>Gestão que alimenta a análise</h3>
-        <p>Roster com histórico imutável, agenda de treinos e scrims, ausências e advertências.</p>
-      </article>
-    </div>
-    <p class="lp-section-close reveal">Sem o cruzamento, você tem três painéis. Com ele, você tem uma decisão.</p>
   </div>
 </section>
 
-<!-- ============================== O PRODUTO POR DENTRO (galeria) ============================== -->
-<section class="section" id="produto">
+<!-- ============================== 7. DEPOIMENTOS ==============================
+     ESCONDIDO (atributo hidden) até os textos reais chegarem. Não publicar com texto inventado.
+     - Coach da NewMode (maior de idade): texto, nome/apelido e função — autorização já pedida (nov/2026).
+     - Victor Goossens: fala literal do vídeo gravado com a NewMode na EWC (ainda não publicado).
+       Se for em inglês, colocar a tradução no <blockquote> e o original em .quote-orig.
+       Manter a nota de não vínculo: a fala é sobre o mercado, não sobre o TAB.
+     Para publicar: preencher os textos e remover o atributo hidden da <section>. -->
+<section class="section" id="depoimentos" hidden>
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="section-title">O produto por dentro</p>
-      <h2>Não é mockup. É o <span class="tab-mark">TAB</span> rodando no elenco da NewMode.</h2>
-      <p class="lead">Capturas reais do painel que a comissão técnica da NewMode usa hoje, direto do navegador.</p>
+      <p class="section-title">Quem usa e o mercado</p>
+      <h2>Por que isso importa.</h2>
     </div>
-    <!--
-      Prints reais do app (newmode-fawn.vercel.app), com autorização de uso de imagem dos jogadores
-      confirmada em 3/out. Redigidos antes de publicar (moldura do navegador removida; nome real,
-      idade, Riot ID e Discord ocultados; e a menção a "Valorant Tracker" na tela Players, que citava
-      fonte de dado errada) — ver assets/img/tab/shot-*.png. Ainda pendentes nos próprios prints,
-      não algo que dá pra corrigir por fora: preencher "Treinos 7D", "Advertências ativas" e
-      "Prospectos em teste" (hoje em branco na Overview) com dado real, e tirar um novo print depois.
-    -->
-    <div class="grid lp-gallery-grid reveal">
-      <figure class="lp-shot"><img src="assets/img/tab/shot-overview.png" width="1200" height="519" alt="Tela Overview do TAB: alertas da semana, agenda e melhor/pior mapa do time" loading="lazy"><figcaption><b>Overview.</b> O que mudou no elenco esta semana, sem abrir nada: quem está caindo, quem está em alta, e a agenda da semana ao lado.</figcaption></figure>
-      <figure class="lp-shot"><img src="assets/img/tab/shot-players.png" width="1200" height="519" alt="Tela Players do TAB: elenco titular com função, elo e KDR" loading="lazy"><figcaption><b>Players.</b> O elenco numa tela só: função, elo e K/D de cada jogador, com sincronização das partidas em um clique.</figcaption></figure>
-      <figure class="lp-shot"><img src="assets/img/tab/shot-performance.png" width="1200" height="519" alt="Tela Performance do TAB: MVP da semana, maior subida e maior queda" loading="lazy"><figcaption><b>Performance.</b> MVP da semana, maior subida, maior queda e jogador mais consistente, com dez abas de análise por janela de tempo, mapa, agente e lado.</figcaption></figure>
-      <figure class="lp-shot"><img src="assets/img/tab/shot-psicologico.png" width="1200" height="519" alt="Tela Psicológico do TAB: diário de bordo com check-in e check-out do time" loading="lazy"><figcaption><b>Psicológico.</b> Check-in e check-out do time num diário de bordo de acesso restrito ao psicólogo e ao admin — a camada mental que nenhuma ferramenta de vídeo ou de GPS tem.</figcaption></figure>
-      <figure class="lp-shot"><img src="assets/img/tab/shot-ficha.png" width="1200" height="519" alt="Ficha de jogador do TAB: performance acumulada e histórico" loading="lazy"><figcaption><b>Ficha do jogador.</b> Performance acumulada, partidas e rounds sincronizados e histórico, tudo na ficha de cada jogador.</figcaption></figure>
+    <div class="quote-grid">
+      <figure class="card quote reveal">
+        <blockquote>[TEXTO DO COACH]</blockquote>
+        <figcaption><b>[Nome ou apelido]</b>[Função] · NewMode Esports, usuário do <span class="tab-mark">TAB</span></figcaption>
+      </figure>
+      <figure class="card quote reveal">
+        <blockquote>[FALA LITERAL DO VICTOR GOOSSENS, TRADUZIDA]</blockquote>
+        <p class="quote-orig">[Original em inglês]</p>
+        <figcaption><b>Victor Goossens</b>Cofundador da Team Liquid · em entrevista à NewMode durante a EWC</figcaption>
+        <p class="quote-disclaimer">A fala é sobre o mercado de esports. Victor Goossens e a Team Liquid não têm relação com o <span class="tab-mark">TAB</span>.</p>
+      </figure>
     </div>
-    <p class="lp-calc-assumption" style="text-align:center;margin-top:16px">Capturas do produto real, com nome, idade, Riot ID e Discord dos jogadores ocultados.</p>
   </div>
 </section>
 
-<!-- ============================== 6. COMO FUNCIONA ============================== -->
-<section class="section" id="como-funciona">
+<!-- ============================== 8. COMO COMEÇAR ============================== -->
+<section class="section" id="como-comecar">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="section-title">Como funciona</p>
-      <h2>Do cadastro ao primeiro cruzamento, em três passos.</h2>
+      <p class="section-title">Como começar</p>
+      <h2>Da demo ao primeiro relatório, em três passos.</h2>
     </div>
     <div class="grid lp-steps">
       <div class="reveal">
         <span class="lp-step-n">1</span>
-        <h3>Cadastre o elenco</h3>
-        <p>Jogadores, funções e comissão entram com os perfis certos. Cada jogador autoriza o uso dos próprios dados.</p>
+        <h3>Agende a demo</h3>
+        <p>Você conta como o seu time trabalha hoje. A gente mostra o <span class="tab-mark">TAB</span> rodando e qual plano faz sentido.</p>
       </div>
       <div class="reveal">
         <span class="lp-step-n">2</span>
-        <h3>O TAB sincroniza e cruza</h3>
-        <p>Partidas entram sozinhas, treinos e ausências entram pela agenda, e o estado do jogador entra pelo acompanhamento. Você não digita dado duas vezes.</p>
+        <h3>Monte o elenco</h3>
+        <p>Cadastre a organização, as equipes e os jogadores. Cada jogador conecta a própria conta Riot, com consentimento.</p>
       </div>
       <div class="reveal">
         <span class="lp-step-n">3</span>
-        <h3>Você decide com a informação pronta</h3>
-        <p>Alertas com fonte, abas de performance e relatório em PDF do time ou do jogador.</p>
-      </div>
-    </div>
-    <p class="reveal" style="text-align:center;margin-top:28px">
-      <a class="btn-glass" href="#form">Agendar uma conversa <span class="icon" aria-hidden="true">arrow_forward</span></a>
-    </p>
-  </div>
-</section>
-
-<!-- ============================== 7. ANTI-INTRIGA ============================== -->
-<section class="section" id="anti-intriga">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="section-title">Feito para o time</p>
-      <h2>Desenhado para o vestiário não virar tribunal.</h2>
-      <p class="lead">Cada pessoa vê só o que o seu papel pede. O resto o sistema simplesmente não entrega.</p>
-    </div>
-    <div class="lp-table-wrap reveal">
-      <table class="lp-table card">
-        <thead>
-          <tr><th>Perfil</th><th>O que vê</th><th>O que não vê</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Jogador</td><td>A própria evolução, treinos e advertências</td><td>Comparativos entre jogadores e o histórico disciplinar dos colegas</td></tr>
-          <tr><td>Coach</td><td>Visão tática completa e inteligência do elenco inteiro</td><td>Dados clínicos do psicólogo</td></tr>
-          <tr><td>Analista</td><td>Scouting e scoreboards, para preparação</td><td>Funções administrativas</td></tr>
-          <tr><td>Psicólogo</td><td>Diários de bordo e ocorrências comportamentais</td><td>Isolamento total dos dados médicos e psicológicos dos demais perfis</td></tr>
-          <tr><td>Admin</td><td>Roster, scouting de talentos, agenda confidencial e advertências</td><td>—</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="lp-callout reveal"><span class="icon" aria-hidden="true">lock</span>Dados de saúde mental só entram com autorização do jogador e só são vistos pelo psicólogo. Você decide o que compartilha.</p>
-    <p class="reveal">A regra vale no servidor, não só na tela. Mesmo que o jogador abra a página de outro perfil pelo endereço, o dado não chega.</p>
-    <p class="lp-section-close reveal">Quem lidera um elenco sabe: a informação certa na mão errada custa mais que a falta dela.</p>
-  </div>
-</section>
-
-<!-- ============================== 8. PROVA E CONFIANÇA (Segurança) ============================== -->
-<section class="section" id="seguranca">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="section-title">Prova e confiança</p>
-      <h2>Construído dentro de um elenco, não numa sala de reunião.</h2>
-    </div>
-
-    <div class="split">
-      <div class="copy reveal">
-        <p class="lead">O <span class="tab-mark">TAB</span> nasceu para gerir o elenco de Valorant da NewMode. Hoje ele roda a rotina do time: roster, treinos, advertências e performance.</p>
-        <p class="muted">Feito por quem opera elenco, não por quem só assistiu de fora. A NewMode constrói o <span class="tab-mark">TAB</span> porque sentiu o mesmo problema que o seu time sente hoje.</p>
-        <ul class="checklist">
-          <li><span class="icon" aria-hidden="true">lock</span>Acesso por perfil, validado no servidor</li>
-          <li><span class="icon" aria-hidden="true">lock</span>Login protegido contra tentativas de acesso em massa</li>
-          <li><span class="icon" aria-hidden="true">verified</span>Dados do jogador sob controle do jogador; dados mentais isolados</li>
-          <li><span class="icon" aria-hidden="true">verified</span>Em conformidade com as políticas de API da Riot Games</li>
-        </ul>
-      </div>
-      <div class="reveal">
-        <div class="card lp-stats-card">
-          <p class="kpi-label">O elenco da NewMode no TAB, hoje</p>
-          <div class="kpi-strip" style="grid-template-columns: repeat(3, 1fr)">
-            <div class="kpi"><span class="stat">6</span><span class="kpi-label">Jogadores ativos</span></div>
-            <div class="kpi"><span class="stat">404</span><span class="kpi-label">Check-ins/outs</span></div>
-            <div class="kpi"><span class="stat">1.914</span><span class="kpi-label">Rounds sincronizados</span></div>
-          </div>
-          <p class="lp-calc-assumption">Números do uso interno em 03/10/2026 (219 check-ins, 185 check-outs; 90 partidas de um único jogador). <!-- Publicar só após autorização do elenco e do jurídico, conforme o doc de estrutura/copy. --></p>
-        </div>
+        <h3>Use no dia a dia</h3>
+        <p>Partidas, agenda e logs entram no <span class="tab-mark">TAB</span>. A comissão acompanha os alertas e leva os relatórios para a reunião.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================== 9. OFERTA ============================== -->
-<section class="section" id="oferta">
+<!-- ============================== 9. PLANOS ============================== -->
+<section class="section" id="planos">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="section-title">Oferta</p>
-      <h2>Free e Pro — os valores a gente mostra na conversa.</h2>
-      <p class="lead">Conte o tamanho do seu elenco e a sua rotina. A gente mostra o que faz sentido pro seu time, sem letra miúda.</p>
+      <p class="section-title">Planos</p>
+      <h2>Comece no Free. Opere no Pro.</h2>
+      <p class="lead">Os valores a gente apresenta na demo, de acordo com o tamanho da sua organização.</p>
     </div>
 
     <div class="grid lp-offer">
       <article class="card reveal">
         <span class="tag">Free</span>
-        <h3>Para conhecer o TAB</h3>
+        <h3>A base organizada</h3>
         <ul class="checklist">
-          <li><span class="blk"></span>Visão geral do elenco (Overview)</li>
-          <li><span class="blk"></span>Roster, funções e histórico básico</li>
-          <li><span class="blk"></span>Agenda de treinos e ausências</li>
+          <li><span class="blk"></span>Overview da equipe</li>
+          <li><span class="blk"></span>Gestão do roster</li>
+          <li><span class="blk"></span>Agenda de treinos, scrims e oficiais</li>
+          <li><span class="blk"></span>Dados básicos da equipe</li>
         </ul>
       </article>
       <article class="card lp-offer--pro reveal">
         <span class="tag tag--brand">Pro</span>
-        <h3>Para operar de verdade</h3>
+        <h3>A comissão inteira no <span class="tab-mark">TAB</span></h3>
         <ul class="checklist">
           <li><span class="blk"></span>Tudo do Free</li>
-          <li><span class="blk"></span>Performance completa por jogador, mapa e agente</li>
-          <li><span class="blk"></span>Cruzamento tático × mental, com alertas e fonte</li>
-          <li><span class="blk"></span>Relatórios em PDF do time e do jogador</li>
+          <li><span class="blk"></span>Performance completa: evolução, comparativos, Head-to-Head, mapas, agentes, histórico</li>
+          <li><span class="blk"></span>Recomendação de Pick/Ban</li>
+          <li><span class="blk"></span>AI Insights com revisão da comissão</li>
+          <li><span class="blk"></span>Relatórios do time e individuais em PDF</li>
+          <li><span class="blk"></span>Logs de treino/scrim e advertências</li>
+          <li><span class="blk"></span>Várias equipes, perfis de acesso e auditoria</li>
         </ul>
       </article>
     </div>
-    <p class="lp-section-close reveal">O que entra em cada plano e os valores a gente ajusta na conversa — depende do tamanho do seu elenco e da sua rotina.</p>
+
+    <div class="founders reveal">
+      <span class="icon" aria-hidden="true">stars</span>
+      <p><b>Founder customers:</b> as primeiras organizações a usar o <span class="tab-mark">TAB</span> têm condições especiais. A gente conta na demo.</p>
+    </div>
+
     <p class="reveal" style="text-align:center">
-      <a class="btn-glass" href="#form">Agendar uma conversa <span class="icon" aria-hidden="true">arrow_forward</span></a>
+      <a class="btn-glass" href="#form">Agendar uma demo <span class="icon" aria-hidden="true">arrow_forward</span></a>
     </p>
   </div>
 </section>
@@ -404,61 +578,63 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="section-title">Perguntas frequentes</p>
-      <h2>Antes de agendar a conversa.</h2>
+      <h2>Antes de agendar a demo.</h2>
     </div>
     <div class="lp-faq reveal">
       <details class="card lp-faq-item">
-        <summary>O <span class="tab-mark">TAB</span> substitui o meu analista?<span class="icon" aria-hidden="true">expand_more</span></summary>
-        <p>Não. Ele tira o trabalho de juntar dado e entrega a informação pronta. A análise e a decisão continuam sendo da comissão.</p>
+        <summary>Quanto custa?<span class="icon" aria-hidden="true">expand_more</span></summary>
+        <p>O <span class="tab-mark">TAB</span> tem um plano Free e um plano Pro. Os valores do Pro a gente apresenta na demo, porque dependem do tamanho da organização e de quantas equipes vão usar. As primeiras organizações têm condições especiais de founder customer.</p>
+      </details>
+      <details class="card lp-faq-item">
+        <summary>O que o plano Free inclui?<span class="icon" aria-hidden="true">expand_more</span></summary>
+        <p>Overview da equipe, gestão do roster, agenda e os dados básicos da equipe, já organizados num lugar só.</p>
+      </details>
+      <details class="card lp-faq-item">
+        <summary>O <span class="tab-mark">TAB</span> está dentro das regras da Riot?<span class="icon" aria-hidden="true">expand_more</span></summary>
+        <p>Sim. O <span class="tab-mark">TAB</span> segue as políticas de API da Riot Games: os dados de partida vêm das contas dos próprios jogadores do elenco, conectadas com o consentimento de cada um, que pode revogar a qualquer momento.</p>
+      </details>
+      <details class="card lp-faq-item">
+        <summary>Dá para ver dados de adversários?<span class="icon" aria-hidden="true">expand_more</span></summary>
+        <p>Não. O <span class="tab-mark">TAB</span> trabalha só com o seu próprio time. A plataforma não consulta, compara nem exibe contas de jogadores de outras equipes.</p>
       </details>
       <details class="card lp-faq-item">
         <summary>Meus jogadores vão ver os dados dos colegas?<span class="icon" aria-hidden="true">expand_more</span></summary>
-        <p>Não. Cada perfil enxerga só o que o seu papel exige, e a regra vale no servidor.</p>
+        <p>Não. No perfil Player, cada jogador vê só os próprios números, a própria agenda e as próprias advertências. Rankings internos, notas da comissão e estatísticas dos colegas não aparecem.</p>
       </details>
       <details class="card lp-faq-item">
-        <summary>Como ficam os dados de saúde mental?<span class="icon" aria-hidden="true">expand_more</span></summary>
-        <p>Isolados e visíveis só para o psicólogo, com autorização do jogador.</p>
+        <summary>A IA decide por mim?<span class="icon" aria-hidden="true">expand_more</span></summary>
+        <p>Não. A IA sugere pontos de atenção a partir das partidas e dos logs da equipe. A comissão revisa, aprova ou descarta, e só os insights aprovados entram nos relatórios.</p>
+      </details>
+      <details class="card lp-faq-item">
+        <summary>Funciona para mais de uma equipe?<span class="icon" aria-hidden="true">expand_more</span></summary>
+        <p>Sim. A organização pode ter várias equipes (principal, academy e outras). O Owner vê todas e cada Admin gere a equipe que é dele.</p>
       </details>
       <details class="card lp-faq-item">
         <summary>Funciona para outros jogos além de Valorant?<span class="icon" aria-hidden="true">expand_more</span></summary>
         <p>Hoje, só Valorant.</p>
       </details>
       <details class="card lp-faq-item">
-        <summary>O <span class="tab-mark">TAB</span> analisa os adversários?<span class="icon" aria-hidden="true">expand_more</span></summary>
-        <p>O <span class="tab-mark">TAB</span> é para o seu time: sua evolução, seus treinos, suas partidas. Não fazemos análise de adversário — a Riot só permite uso de dados de terceiros com autorização individual de cada jogador.</p>
-      </details>
-      <details class="card lp-faq-item">
-        <summary>De onde vêm os dados das partidas?<span class="icon" aria-hidden="true">expand_more</span></summary>
-        <p>Das contas dos próprios jogadores, com a autorização de cada um, dentro das exigências da API da Riot Games.</p>
-      </details>
-      <details class="card lp-faq-item">
-        <summary>Existe versão gratuita?<span class="icon" aria-hidden="true">expand_more</span></summary>
-        <p>Sim. O <span class="tab-mark">TAB</span> tem uma versão Free e uma versão Pro, com mais recursos. O que cada uma inclui e os valores a gente mostra numa conversa, porque dependem do tamanho e da rotina do seu elenco.</p>
-      </details>
-      <details class="card lp-faq-item">
-        <summary>Quanto tempo leva para configurar?<span class="icon" aria-hidden="true">expand_more</span></summary>
-        <p>Ainda estamos medindo esse tempo com os primeiros times. Pergunte na conversa — a gente é direto sobre o que já sabe e o que ainda está validando.</p>
-      </details>
-      <details class="card lp-faq-item">
         <summary>O que acontece com meus dados se eu cancelar?<span class="icon" aria-hidden="true">expand_more</span></summary>
-        <p>Ainda estamos formalizando a política de exportação e exclusão. Já temos uma resposta prática para isso — pergunte na conversa.</p>
+        <p>Ainda estamos formalizando a política de exportação e exclusão. Pergunte na demo: a gente explica como funciona hoje.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ============================== 11. CTA FINAL ============================== -->
+<!-- ============================== 11. FORMULÁRIO ============================== -->
 <section class="section" id="form">
   <div class="wrap">
     <div class="lp-lead-head reveal">
       <img src="assets/img/tab/tab-lockup.png" width="220" height="94" alt="NewMode TAB — Tactical Analytics Base">
       <h2>Dá um <span class="tab-mark">TAB</span> aí!</h2>
-      <p class="lead">Agende uma conversa e veja o que cinco abas abertas não mostram.</p>
+      <p class="lead">Agende uma demo e veja o seu elenco organizado num lugar só.</p>
     </div>
     <div class="card lp-lead-card reveal">
-      <!-- Sem backend ainda: o envio abre o app de e-mail (script no fim da página).
-           Para Formspree/Netlify Forms, adicione action="..." method="post" ao <form> abaixo. -->
-      <form class="form" id="tab-lead-form" novalidate>
+      <!-- Envio pelo Formspree (endpoint mzeeqyde). Com JS: envio sem sair da página.
+           Sem JS: o POST normal do form vai para o Formspree, que mostra a própria página de obrigado. -->
+      <form class="form" id="tab-lead-form" action="https://formspree.io/f/mzeeqyde" method="POST">
+        <input type="hidden" name="_subject" value="[TAB] Pedido de demo pela landing page">
+        <div class="hp-field" aria-hidden="true"><label for="tab-gotcha">Não preencha</label><input id="tab-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
         <div class="form-row">
           <div class="field field--float">
             <input class="input" id="tab-nome" name="nome" type="text" autocomplete="name" required placeholder=" ">
@@ -466,7 +642,7 @@
           </div>
           <div class="field field--float">
             <input class="input" id="tab-email" name="email" type="email" autocomplete="email" required placeholder=" ">
-            <label class="float-label" for="tab-email">E-mail profissional</label>
+            <label class="float-label" for="tab-email">E-mail</label>
           </div>
         </div>
         <div class="form-row">
@@ -475,28 +651,33 @@
             <label class="float-label" for="tab-org">Organização</label>
           </div>
           <div class="field field--float">
-            <input class="input" id="tab-tamanho" name="tamanho" type="text" placeholder=" ">
-            <label class="float-label" for="tab-tamanho">Tamanho do elenco (opcional)</label>
+            <select class="input" id="tab-funcao" name="funcao" required>
+              <option value="" disabled selected hidden></option>
+              <option value="Dono / gestor">Dono / gestor</option>
+              <option value="Coach">Coach</option>
+              <option value="Analista">Analista</option>
+              <option value="Outro">Outro</option>
+            </select>
+            <label class="float-label" for="tab-funcao">Sua função</label>
           </div>
         </div>
         <div class="field field--float">
-          <select class="input" id="tab-funcao" name="funcao" required>
-            <option value="" disabled selected hidden></option>
-            <option value="coach">Coach</option>
-            <option value="analista">Analista</option>
-            <option value="gestor">Gestor / diretor</option>
-            <option value="outro">Outro</option>
-          </select>
-          <label class="float-label" for="tab-funcao">Sua função</label>
+          <input class="input" id="tab-tamanho" name="tamanho_elenco" type="text" placeholder=" ">
+          <label class="float-label" for="tab-tamanho">Quantas equipes e jogadores (opcional)</label>
         </div>
         <div class="field field--float">
           <textarea class="input" id="tab-mensagem" name="mensagem" placeholder=" "></textarea>
-          <label class="float-label" for="tab-mensagem">Conte um pouco da sua rotina de análise (opcional)</label>
+          <label class="float-label" for="tab-mensagem">Como o time organiza dados hoje? (opcional)</label>
         </div>
-        <button class="btn-glass" type="submit" style="justify-self:start">Quero agendar uma conversa <span class="icon" aria-hidden="true">arrow_forward</span></button>
+        <button class="btn-glass" id="tab-submit" type="submit" style="justify-self:start">Quero agendar uma demo <span class="icon" aria-hidden="true">arrow_forward</span></button>
         <p class="form-status" id="tab-form-status" role="status" aria-live="polite"></p>
-        <p class="form-note">Seus dados e os do seu time ficam sob a sua autorização.</p>
+        <p class="form-note">Usamos seus dados só para responder o seu pedido de demo.</p>
       </form>
+      <div class="lp-lead-done" id="tab-lead-done" hidden tabindex="-1">
+        <span class="icon" aria-hidden="true">check_circle</span>
+        <h3>Pedido recebido.</h3>
+        <p>A gente responde no e-mail que você informou para combinar o melhor horário da demo.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -504,10 +685,10 @@
 </main>
 
 <a class="lp-sticky" href="#form">
-  <span class="btn-glass">Agendar conversa <span class="icon" aria-hidden="true">arrow_forward</span></span>
+  <span class="btn-glass">Agendar demo <span class="icon" aria-hidden="true">arrow_forward</span></span>
 </a>
 
-<!-- ============================== 12. RODAPÉ ============================== -->
+<!-- ============================== RODAPÉ ============================== -->
 <footer class="lp-footer">
   <div class="lp-footer-brand">
     <img src="assets/img/logo/nm-icon.png" alt="" width="20" height="20">
@@ -515,18 +696,16 @@
   </div>
   <p class="lp-footer-legal">
     O TAB não é endossado pela Riot Games e não reflete as opiniões da Riot Games ou de quem trabalha com propriedades da Riot Games.
-    Riot Games e todas as marcas associadas são marcas registradas da Riot Games, Inc.
+    Riot Games, Valorant e todas as marcas associadas são marcas registradas da Riot Games, Inc.
   </p>
   <p>© <span data-year>2026</span> NewMode Esports LTDA — CNPJ 62.499.400/0001-40. Todos os direitos reservados.</p>
-  <p class="lp-footer-links"><a href="mailto:contato@newmode.com.br">Contato</a></p>
 </footer>
 
 <script src="assets/js/vendor/lenis.min.js"></script>
 <script src="assets/js/site.js"></script>
 <script>
-  // Calculadora do custo do processo de decisão (seção 3). Sem cadastro: o resultado aparece
-  // ao digitar. Só calcula custo em R$ se a pessoa informar o valor da hora — sem isso, mostra
-  // só horas e dias (ver guardrail do doc de copy: nenhum número sem fonte real ou do visitante).
+  // Calculadora (seção "Faça a conta"). Só calcula R$ se a pessoa informar o valor da hora —
+  // nenhum número sem fonte (dado do próprio visitante).
   (function () {
     "use strict";
     var pessoasEl = document.getElementById("calc-pessoas");
@@ -536,77 +715,70 @@
     if (!pessoasEl || !horasEl) { return; }
     var empty = document.getElementById("calc-empty");
     var numbers = document.getElementById("calc-numbers");
-    var fmtInt = function (n) { return Math.round(n).toLocaleString("pt-BR"); }
-    var fmtBRL = function (n) { return n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 }); }
+    var fmtInt = function (n) { return Math.round(n).toLocaleString("pt-BR"); };
+    var fmtBRL = function (n) { return n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 }); };
 
     function calc() {
       var pessoas = parseFloat(pessoasEl.value);
       var horas = parseFloat(horasEl.value);
       var ferramentas = parseFloat(ferramentasEl.value);
       var custoHora = parseFloat(custoEl.value);
-
-      if (!pessoas || pessoas <= 0 || !horas || horas <= 0) {
-        empty.hidden = false;
-        numbers.hidden = true;
-        return;
-      }
-      empty.hidden = true;
-      numbers.hidden = false;
-
+      if (!pessoas || pessoas <= 0 || !horas || horas <= 0) { empty.hidden = false; numbers.hidden = true; return; }
+      empty.hidden = true; numbers.hidden = false;
       var horasMes = pessoas * horas * 4.33;
       var diasAno = (horasMes * 12) / 8;
-
       document.getElementById("calc-horas-mes").textContent = fmtInt(horasMes) + " horas por mês";
       document.getElementById("calc-dias").textContent = fmtInt(diasAno) + " dias";
-
-      var custoLinha = document.getElementById("calc-custo-linha");
-      if (custoHora && custoHora > 0) {
-        var custoAnual = horasMes * custoHora * 12;
-        custoLinha.textContent = " e " + fmtBRL(custoAnual) + " por ano";
-      } else {
-        custoLinha.textContent = "";
-      }
-
-      var toolsLinha = document.getElementById("calc-tools-linha");
-      toolsLinha.textContent = ferramentas && ferramentas > 0
-        ? "Isso com a comissão abrindo " + fmtInt(ferramentas) + " ferramenta" + (ferramentas === 1 ? "" : "s") + " diferentes a cada decisão."
+      document.getElementById("calc-custo-linha").textContent = custoHora && custoHora > 0 ? " e " + fmtBRL(horasMes * custoHora * 12) + " por ano" : "";
+      document.getElementById("calc-tools-linha").textContent = ferramentas && ferramentas > 0
+        ? "Isso com a comissão abrindo " + fmtInt(ferramentas) + " ferramenta" + (ferramentas === 1 ? "" : "s") + " diferente" + (ferramentas === 1 ? "" : "s") + " a cada decisão."
         : "";
     }
-
-    [pessoasEl, horasEl, ferramentasEl, custoEl].forEach(function (el) {
-      el.addEventListener("input", calc);
-    });
+    [pessoasEl, horasEl, ferramentasEl, custoEl].forEach(function (el) { el.addEventListener("input", calc); });
     calc();
   })();
 
-  // Formulário desta página (separado do #contact-form da página de Contato): mesmo padrão de
-  // degradação graciosa — sem backend, abre o cliente de e-mail com a mensagem pronta.
-  // TODO: trocar pelo e-mail real da NewMode.
+  // Formulário → Formspree, sem sair da página. Se o fetch falhar, avisa e deixa tentar de novo.
   (function () {
     "use strict";
-    var CONTACT_EMAIL = "contato@newmode.com.br";
     var form = document.getElementById("tab-lead-form");
-    if (!form) { return; }
+    if (!form || !window.fetch) { return; }
     var status = document.getElementById("tab-form-status");
+    var done = document.getElementById("tab-lead-done");
+    var submit = document.getElementById("tab-submit");
+
+    function showStatus(text, isError) {
+      status.textContent = text;
+      status.classList.add("is-visible");
+      status.classList.toggle("form-status--error", !!isError);
+    }
+
     form.addEventListener("submit", function (e) {
-      if (form.getAttribute("action")) { return; }
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      var d = new FormData(form);
-      var funcaoLabel = form.funcao.options[form.funcao.selectedIndex].text;
-      var subject = "[TAB] Pedido de conversa — " + d.get("organizacao");
-      var body =
-        "Nome: " + d.get("nome") + "\n" +
-        "E-mail: " + d.get("email") + "\n" +
-        "Organização: " + d.get("organizacao") + "\n" +
-        "Função: " + funcaoLabel + "\n" +
-        "Tamanho do elenco: " + (d.get("tamanho") || "não informado") + "\n\n" +
-        (d.get("mensagem") || "(sem mensagem adicional)");
-      location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      if (status) {
-        status.textContent = "Abrimos o seu app de e-mail com a mensagem pronta. Se nada abriu, escreva direto para " + CONTACT_EMAIL + ".";
-        status.classList.add("is-visible");
-      }
+      submit.disabled = true;
+      submit.setAttribute("aria-busy", "true");
+      showStatus("Enviando…", false);
+      fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+        .then(function (res) {
+          if (res.ok) {
+            form.hidden = true;
+            done.hidden = false;
+            done.focus();
+            return;
+          }
+          return res.json().then(function (data) {
+            var msg = data && data.errors ? data.errors.map(function (er) { return er.message; }).join(" ") : "";
+            throw new Error(msg);
+          });
+        })
+        .catch(function (err) {
+          showStatus("Não conseguimos enviar agora. " + (err && err.message ? err.message + " " : "") + "Tente de novo em instantes.", true);
+        })
+        .then(function () {
+          submit.disabled = false;
+          submit.removeAttribute("aria-busy");
+        });
     });
   })();
 </script>
